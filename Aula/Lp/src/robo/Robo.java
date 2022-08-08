@@ -1,12 +1,12 @@
 package robo;
 
+import java.util.Scanner;
+
 public class Robo {
     //lados
     private int x = 0;
     private int y = 0;
 
-    public int calcY;
-    public int calcX;
 
     public int getX() {
         return x;
@@ -26,25 +26,36 @@ public class Robo {
 
     public void cima (){
         this.y++;
-        calcY++;
-        System.out.println("\nA posição agora é: (" + calcX + "," + calcY + ")");
+        System.out.println("\nA posição agora é: (" + x + "," + y + ")");
     }
 
     public void baixo (){
         this.y--;
-        calcY--;
-        System.out.println("\nA posição agora é: (" + calcX + "," + calcY + ")");
+        System.out.println("\nA posição agora é: (" + x + "," + y + ")");
     }
     
     public void esquerda (){
         this.x--;
-        calcX--;
-        System.out.println("\nA posição agora é: (" + calcX + "," + calcY + ")");
+        System.out.println("\nA posição agora é: (" + x + "," + y + ")");
     }
 
     public void direita (){
         this.x++;
-        calcX++;
-        System.out.println("\nA posição agora é: (" + calcX + "," + calcY + ")");
+        System.out.println("\nA posição agora é: (" + x + "," + y + ")");
+    }
+
+    public void leitura (){
+        Scanner ler = new Scanner(System.in);
+        String comando = ler.nextLine();
+        
+        if (comando.equals("w")){
+            cima();
+        } else if (comando.equals("a")){
+            esquerda();
+        } else if (comando.equals("s")){
+            baixo();
+        } else if (comando.equals("d")){
+            direita();;
+        }
     }
 }
