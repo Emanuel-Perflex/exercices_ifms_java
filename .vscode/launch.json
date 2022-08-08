@@ -1,0 +1,35 @@
+{
+    // Use o IntelliSense para saber mais sobre os atributos possíveis.
+    // Focalizar para exibir as descrições dos atributos existentes.
+    // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Init",
+            "request": "launch",
+            "mainClass": "Vetores.Init",
+            "projectName": "Beto atividades_1b70be7d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Machine",
+            "request": "launch",
+            "mainClass": "robo.Machine",
+            "projectName": "Beto atividades_1b70be7d"
+        },
+        {
+            "type": "java",
+            "name": "Launch ContaExe",
+            "request": "launch",
+            "mainClass": "um.ContaExe",
+            "projectName": "Beto atividades_1b70be7d"
+        }
+    ]
+}
