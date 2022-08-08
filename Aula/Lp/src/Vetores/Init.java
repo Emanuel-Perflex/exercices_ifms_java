@@ -62,7 +62,6 @@ public class Init {
 
         //desafio: Fazer uma matriz com numeros de 10 a 20 que não podem repetir
         int max = 20, min = 10;
-        int vetor[] = new int[10];
         Random rand = new Random();
         int qto = 0;
         for (int i = 0; i < 10; i++) {
