@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Machine {
     
-
     public static void main(String[] args) {
         Robo maquina = new Robo();
         
