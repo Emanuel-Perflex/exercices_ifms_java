@@ -11,25 +11,25 @@ public class Auladois {
     */
 
     public static void main(String[] args) {
-          int vetor[] = {7,3,9,1,10};
-          int menor, indiceMenor;
+          int vetor[] = {1,2,4,3,5};
+          int menor;
+          int aux;
 
           for (int i = 0; i < vetor.length - 1; i++) {
               menor = vetor[i];
-              indiceMenor = i;
+              aux = i;
 
               for (int j = i + 1; j < vetor.length; j++){
                   if (vetor[j] < menor){
                       menor = vetor[j];
-                      indiceMenor = j;
+                      aux = j;
                   }
               }
-              vetor[indiceMenor] = vetor[i];
+              vetor[aux] = vetor[i];
               vetor[i] = menor;
         }
         
-        
-        for(int i = 0; i<vetor.length; i++){
+        for(int i = 0; i < vetor.length; i++){
             System.out.println(vetor[i]);
         }
     } 
