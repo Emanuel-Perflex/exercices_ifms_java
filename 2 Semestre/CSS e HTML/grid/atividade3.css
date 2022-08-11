@@ -1,0 +1,48 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    text-align: center;
+    background-color: rgb(157, 157, 245);
+    height: 4rem;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+}
+
+aside{
+    background-color: chartreuse;
+    height: 50rem;
+    text-align: center;
+}
+
+article{
+    background-color: orange;
+    color: white;
+    align-items: flex-end;
+}
+
+#text{
+    text-align: center;
+}
+
+.images{
+    display: flex;
+    justify-content: space-around;
+}
+
+.images #image{
+    background-color: yellow;
+    width: 20rem;
+    height: 10rem;
+}
+
+footer{
+    background-color: rgb(157, 157, 245);
+    height: 4rem;
+}

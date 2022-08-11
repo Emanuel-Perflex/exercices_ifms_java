@@ -1,0 +1,55 @@
+main{
+    border: 2px solid blueviolet;
+    height: 99vh;
+    width: 99%;
+}
+
+.container{
+    border: 2px solid red;
+    height: 95vh;
+    width: 75%;
+    margin-left: 12.5%;
+    margin-top: 2vh;
+}
+
+header{
+    height: 15%;
+    width: 95%;
+    border: 2px solid yellow;
+    margin: 2%;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 1rem;
+    height: 100%;
+}
+
+article{
+    border: 1px solid green;
+    align-items: flex-end;
+    height: 70%;
+}
+
+nav{
+    border: 1px solid blue;
+    margin-top: 20%;
+    margin-left: 1rem;
+    height: 20rem;
+    width: 20rem;
+}
+
+.sidebar{
+    border: 1px solid rgb(248, 161, 161);
+    height: 70%;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.item{
+    border: 1px solid blueviolet;
+    height: 50px;
+    margin-top: 1rem;
+}
+

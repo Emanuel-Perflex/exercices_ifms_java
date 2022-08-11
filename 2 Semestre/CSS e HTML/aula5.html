@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>aula 5</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="JS, Node.js, Web, Css, HTML">
+        <meta name="keywords" content="Treino básico com os types existentes em HTML">
+        <meta name="Emanuel" content="emanuelbarbosati@gmail.com">
+    </head>
+    <p>
+        <p> Criar um formulário utilizando todos os types</p>
+        <p>Todos os types tem um input</p> 
+        <p> Recomendado utilizar DIVs </p>
+        <p> Quarta tem prova de HTML (90% do que vai cair é table) - 1 ou 2 questões escritas, pode cair protocolos e mais 3 questão de tabelas</p>
+        <p> vai dar a tabela pronta e tem que fazer igual</p>
+
+        <form action="/pagina-processa-dados-do-form" method="post">
+            <div>
+                <label for="name">Nome:</label>
+                <input type="text" id="name" />
+            </div>
+            <div>
+                <label for="mail">E-mail:</label>
+                <input type="email" id="mail" />
+            </div>
+            <div>
+                <label for="msg">Mensagem:</label>
+                <textarea id="msg"></textarea>
+            </div>
+            <div class="button">
+                <button type="submit">Enviar sua mensagem</button>
+            </div>
+        </form>
+        <style>
+            form {
+                /* Apenas para centralizar o form na página */
+                margin: 0 auto;
+                width: 400px;
+                /* Para ver as bordas do formulário */
+                padding: 1em;
+                border: 1px solid #CCC;
+                border-radius: 1em;}
+        </style>
+        <style>
+            label {
+            display: inline-block;
+            width: 90px;
+            text-align: right;
+}
+        </style>
+        
+        
+        <div align="center"> <br><br>
+            <table width="100%" border="1px">
+                <thead>
+                    <tr>
+                        <th>Segunda Feira</th>
+                        <th>Terça Feira</th>
+                        <th>Quarta Feira</th>
+                        <th>Quinta Feira</th>
+                        <th>Sexta Feira</th>
+                        <th>Sabádo</th>
+                        <th>Domingo</th> 
+                    </tr> 
+                    <tr align="center"> 
+                        <td>Não Vou</td>
+                        <td>Não Vou</td>
+                        <td>Não Vou</td>
+                        <td>Não Vou</td>
+                        <td>Não Vou</td>
+                        <td>Não Vou</td>
+                        <td>Não Vou</td>
+                    </tr>
+                    <tr align="center">
+                        <td></td>
+                    </tr>
+
+                </thead>
+            </table>
+        </div>    
+    </body>
+    </html>

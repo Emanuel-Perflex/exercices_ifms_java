@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+div{
+    border: 1px solid black;
+}
+
+.container{
+    margin: 20px; /*O que deu espaço do teto*/
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap; /*Quebra de linha no header*/
+    gap: 10px; /*Deu os espacinhos entre os retangulos*/
+}
+
+header{
+    height: 100px;
+    background-color: brown;
+    width: 100vw; /*Com 100% ele buga, utilando vw não, e o calc funciona para calcular as proporções*/;
+}
+
+.box1{
+    height: calc(100vh - 100px - 100px - 60px); /*Calculo dos espacinhos*/
+    display: flex; /*Colocou nav do lado do bloco article com as 3 imagens*/
+    gap: 10px;
+}
+
+nav{ /*Nav de navegação, aqui se vai os menus e se costuma usar tamanhos fixos*/
+    background-color: green;
+    width: 230px;
+}
+
+article{
+    width: calc(100vw - 230px - 50px); /*Calculo do espaçamento entre article e nav*/
+    display: flex; /*Deixou as imagens uma do lado da outra*/
+    background-color: chocolate;
+    align-items: flex-end;
+    justify-content: space-around; /*Distancia das 3 imagens*/
+
+}
+
+.container .box1 article div{
+    border: 1px solid black;
+    background-color: blueviolet;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+}
+
+footer{
+    height: 100px;
+    background-color: wheat;
+    width: 100vw; /*Com 100% ele buga, utilando vw não*/
+}

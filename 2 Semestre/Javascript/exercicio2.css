@@ -1,0 +1,66 @@
+*{
+    padding: 0;    
+    border: 0;
+    font-size: 67.5%;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {font-size: 1rem ;}
+
+body {
+    margin: 0;
+}
+
+a {
+    color: white;
+    text-decoration: 0;
+}
+
+.icon {
+    padding: 1rem;
+}
+
+nav {
+    width: 16vw;
+    height: 100%;
+    background-color: blue;
+    margin-left: 0;
+    color: white;
+    border-radius: 1rem;
+    text-decoration: 0
+    animation: hamburgao steps (8) infinite;
+}
+
+ul {
+    list-style: none;
+    padding: 2rem;
+    border: 0;
+}
+
+i {
+    font-size: 2rem;
+    color: white;
+}
+
+@keyframes hamburgao{
+    0% {
+        transition: 3s;
+         position: absolute;
+         left: 10vw;   
+    }
+    
+    100% {
+        transition: 10s;
+        position: absolute;
+        left: 16vw;
+    }
+
+}
+

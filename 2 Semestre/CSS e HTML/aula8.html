@@ -1,0 +1,78 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 8 - Flexbox(FlexContainer)</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet"> <!--Manuseio de fonte, é possível trocar a fonte de todas as paginas, e é possível importar n fontes-->
+                <!--ANOTAÇÕES FLEX DIRECTION-->
+        <!--Display flex colocou as "box" uma ao lado da outra-->
+        <!--Flex Direction preencheu, mas uma em baixo da outra-->
+        <!--O atributo reverse literalmente reverte as box-->
+        <!--O flex-direction de flex é sempre row-->
+
+                <!--ANOTAÇÕES FLEX-WRAP-->
+        <!--nowrap é o atributo padrão--->       
+        <!--wrap quebra a linha--->       
+        <!----->       
+        
+            <!--Anotações Justify-content-->
+        <!--Center coloca todas no meio-->
+        <!--Between da um espaço entre elas-->
+        <!--Space around também mas centralizando, sendo que as colunas em branco do meio tem um tamanho mais contudente de espaço em branco-->
+
+    <!-- treinar https://flexboxfroggy.com/-->
+
+        <style>  
+            body{ 
+            font-family: 'Poppins', sans-serif;
+            }
+            
+            .container{
+                border: 5px groove rgb(0, 0, 0);
+                background: rgb(175, 228, 96);
+                display: flex;
+                flex-direction: row ;
+                /*flex-wrap: wrap-reverse;*/
+                justify-content: space-around; 
+            }
+
+            .box1{
+                background: rgb(80, 80, 201);
+                width: 200px;
+            }
+            .box2{
+                background: rgb(53, 182, 53);
+                width: 200px
+            }
+            .box3{
+                background: rgb(194, 191, 1);
+                width: 200px
+            }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box1">
+            <h1>Item 1</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, aliquid possimus! Recusandae mollitia numquam sunt iure labore repellat enim laborum culpa nemo adipisci voluptate sint, ipsa dolorum vitae, impedit esse!</p> <!--O lorem dá a porra de um texto enorme, não parece uma tag mas é um comando e da pra limitar a quantidade de palavras-->
+        </div>
+        <div class="box2">
+            <h1>Item 2</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat numquam, ut asperiores reprehenderit voluptate dignissimos id vero blanditiis architecto consequuntur?</p>
+        </div>
+        <div class="box3">
+            <h1>Item 3</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat numquam, ut asperiores reprehenderit voluptate dignissimos id vero blanditiis architecto consequuntur?</p>
+        </div>
+    </div>    
+
+
+
+
+</body>
+
+</html>
