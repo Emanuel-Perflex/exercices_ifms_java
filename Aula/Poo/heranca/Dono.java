@@ -11,16 +11,18 @@ public class Dono extends Pessoa {
 		this.qtoAnimais = qtoAnimais;
 	}
 
-
-    
-
-
     //Construtor da classe
     public Dono(){
         super(); //boa pratica, chama o construtor da super classe
     }
 
     public void alimentarAnimal(AnimalTerrestre animal){
-        System.out.print("Estou alimentando o cidadao chamado " + animal.getNome());
+        System.out.println("Estou alimentando o cidadao chamado " + animal.getNome());
+    }
+
+    @Override
+    public void andar (){
+        this.passos++;
+        System.out.println("Estou andando.....");
     }
 }

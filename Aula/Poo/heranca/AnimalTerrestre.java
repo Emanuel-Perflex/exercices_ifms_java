@@ -42,6 +42,7 @@ public abstract class AnimalTerrestre {
     }
 
     //Metodos abstratos não podem ter corpo
+    //Se obrigamos todos terem um metodo da superclasse, chamamos de polimorfimo
     public abstract void emitirSom();
 
 }

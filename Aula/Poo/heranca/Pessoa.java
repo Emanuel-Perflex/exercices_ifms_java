@@ -1,23 +1,42 @@
 package poo.heranca;
 
 public abstract class Pessoa {
-    private String nome;
-    private String endereco;
+    protected String nome;
+    protected String endereco;
+    protected int passos;
 
-    public nome getNome() {
-        return this.Nome;
+    public int getPassos() {
+        return this.passos;
     }
 
-    public endereco getEndereco() {
-        return this.Endereco;
+    public void setPassos(int passos) {
+        this.passos = passos;
+    }
+
+    public String getNome() {
+        return this.nome;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
     }
 
+    public String getEndereco() {
+        return this.endereco;
+    }
+
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
+
+    public void andar () {
+        System.out.println("Andando..........");
+    }
+    
+    public void falar () {
+        System.out.println("Falando..........");
+    }
+
+    
 
 }
