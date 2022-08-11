@@ -36,7 +36,4 @@ public abstract class Pessoa {
     public void falar () {
         System.out.println("Falando..........");
     }
-
-    
-
 }

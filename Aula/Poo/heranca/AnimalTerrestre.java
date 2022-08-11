@@ -1,7 +1,5 @@
 package poo.heranca;
 
-import java.util.Set;
-
 //Quando abstrata é impedidade de gerar instancia
 public abstract class AnimalTerrestre {
     protected String nome;
