@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "Beto_1026eee4"
+        },
+        {
+            "type": "java",
             "name": "Launch Aleatorios",
             "request": "launch",
             "mainClass": "random.Aleatorios",
