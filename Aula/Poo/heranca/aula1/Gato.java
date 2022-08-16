@@ -1,4 +1,4 @@
-package poo.heranca;
+package poo.heranca.aula1;
 
 public class Gato extends AnimalTerrestre {
  

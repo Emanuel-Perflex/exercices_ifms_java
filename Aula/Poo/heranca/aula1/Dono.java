@@ -1,4 +1,4 @@
-package poo.heranca;
+package poo.heranca.aula1;
 
 public class Dono extends Pessoa {
     private int qtoAnimais;

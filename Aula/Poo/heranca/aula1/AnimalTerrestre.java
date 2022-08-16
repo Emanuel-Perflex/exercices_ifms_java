@@ -1,4 +1,4 @@
-package poo.heranca;
+package poo.heranca.aula1;
 
 //Quando abstrata é impedidade de gerar instancia
 public abstract class AnimalTerrestre {

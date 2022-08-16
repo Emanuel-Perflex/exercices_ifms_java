@@ -1,4 +1,4 @@
-package poo.heranca;
+package poo.heranca.aula1;
 
 public abstract class Pessoa {
     protected String nome;
