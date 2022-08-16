@@ -6,6 +6,11 @@ public class Funcionario {
     private int matricula;
     private String cargo;
     private LocalDate hEntrada;
+    private String enderecoFunc;
+
+    public void setEnderecoFunc(String enderecoFunc) {
+        this.enderecoFunc = enderecoFunc;
+    }
 
     public void setCargo(String cargo) {
         this.cargo = cargo;
@@ -30,4 +35,9 @@ public class Funcionario {
     public LocalDate gethEntrada() {
         return hEntrada;
     }
+
+    public String getEnderecoFunc() {
+        return enderecoFunc;
+    }
+    ab
 }
