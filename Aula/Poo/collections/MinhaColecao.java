@@ -28,5 +28,12 @@ public class MinhaColecao {
          for (int i = 0; i < livros.size; i++){
             System.out.println(livros.get(i).getNome());
         }
+
+        //forma senior de fazer a mesma coisa
+        for (Livro l: livros){
+            System.out.println(l);
+        }
+        //removendo indice 0
+        livros.remove(0)
     }
 }
