@@ -41,5 +41,6 @@ public class MinhaColecao {
         //Estudar string builder
         //tirar o robo de poo e passar a ser LP, linguagem estruturada
         //Pra poo, fazer um menu que cadastre em cada classe (No polimorfimso muito provavelmente, novas informações); - Quando entrar em livros, pedir todos os atributos. Vai dar umas 280 linhas de acordo o Beto
+        // Basicamente fazer um cadastrinho básico, só da trabalho pra krl
     }
 }
