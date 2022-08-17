@@ -35,5 +35,11 @@ public class MinhaColecao {
         }
         //removendo indice 0
         livros.remove(0)
+        
+        //Estudar lambda fuctions
+        //Desafio do Beto pra galera do fundo, ver o que é Scene Builder (Javafxgit)
+        //Estudar string builder
+        //tirar o robo de poo e passar a ser LP, linguagem estruturada
+        //Pra poo, fazer um menu que cadastre em cada classe (No polimorfimso muito provavelmente, novas informações); - Quando entrar em livros, pedir todos os atributos. Vai dar umas 280 linhas de acordo o Beto
     }
 }
