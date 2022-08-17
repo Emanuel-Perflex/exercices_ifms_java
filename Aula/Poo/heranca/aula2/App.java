@@ -4,7 +4,9 @@ import java.time.LocalDate;
 
 public class App {
 
-    //começar a usar tema Aura no vscode
-    //Instalar o tabnine
+    //Aprende a mexe com localdate
+    //Aprender polimorfismo 
+
+    //Em empréstimo será necessário apresentar pra quem foi emprestado, quando pegou, quando devolveu, seu endereço 
 
 }
