@@ -17,5 +17,16 @@ public class MinhaColecao {
         //Estrutura de list
         //Declaração de collection
         List<livro> livros = new ArrayList<livro>();
+
+        //Na main da parada - pra adicionar um elemento na list
+        livros.add(l1);
+
+        //Declaração de um objeto lista
+        Livro l1 = new Livro("Minha coleção parte IV");
+
+        //para percorrer - Também da pra usar o length no lugar do size
+         for (int i = 0; i < livros.size; i++){
+            System.out.println(livros.get(i).getNome());
+        }
     }
 }
