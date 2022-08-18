@@ -14,3 +14,4 @@
     - Estudar uma forma de limpar o buffer do scan
     - Beto fez o sistema todo em aula
     - Estudar split
+    - Estudar como converter um tipo para outro (Método parse)
