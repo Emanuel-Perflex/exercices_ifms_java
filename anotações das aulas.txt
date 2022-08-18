@@ -9,4 +9,8 @@
     - Fazer em casa uma função que converta string em data, diferente da que o professor fez
     - Pensar numa forma de fazer um menuzinho top pra atividade de Menu
     - Estudar sobre a vantagem de usar static nas coisas
-    
+    - IntelliSense for CSS class name in HTML - baixar essa extensão no pc de casa
+    - Ficar bom em collections
+    - Estudar uma forma de limpar o buffer do scan
+    - Beto fez o sistema todo em aula
+    - Estudar split
