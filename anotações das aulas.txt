@@ -1,0 +1,12 @@
+//Nos dias anteriores a esse, eu estava realizando anotações nos arquivos java. A partir do dia 17/08 as anotações das aulas serão colocadas aqui.
+
+-> 17/08
+    - Ganhei um ponto extra, marcar no arquivo do github
+    - Estudar sobre try
+    - Estudar sobre catch
+    - Estudar sobre finally
+    - Estudar sobre forexeptions
+    - Fazer em casa uma função que converta string em data, diferente da que o professor fez
+    - Pensar numa forma de fazer um menuzinho top pra atividade de Menu
+    - Estudar sobre a vantagem de usar static nas coisas
+    
