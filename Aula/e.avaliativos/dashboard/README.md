@@ -6,11 +6,12 @@ Como nas aulas eu apenas rascunho o que vejo no quadro sendo exibido, para mostr
 
 As classes que esse sistema deve possuir e seus respectivos atributos são:
 
-- Pessoa: nome, data de nascimento, endereço, cpf, numero de telefone, saldo, emprego(ou alguma outra forma de garantia para trabalhar com dividas);
+- Pessoa: nome, data de nascimento, endereço, cpf, numero de telefone, devedor;
 - Autor: formação, quantidade de livros;
 - Estudante: RA (Identificação), curso, dt inicio, data prevista de termino;
 - Funcionario: Matricula (id), data de admissão, cargo;
 - Livro: Titulo, editora, dt de lançamento;
+- Empréstimo: servidor, qual o livro, dt do emprestimo, dt de devolução, estudante
 
 A Hierarquia do projeto é a seguinte: 
 ![Screenshot](screenshot.jpeg)
