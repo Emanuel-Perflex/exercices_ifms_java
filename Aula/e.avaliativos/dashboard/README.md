@@ -6,9 +6,9 @@ Como nas aulas eu apenas rascunho o que vejo no quadro sendo exibido, para mostr
 
 As classes que esse sistema deve possuir e seus respectivos atributos são:
 
-- Pessoa: nome, data de nascimento, endereço, cpf, numero de telefone, devedor;
+- Pessoa: nome, data de nascimento, endereço, cpf, numero de telefone;
 - Autor: formação, quantidade de livros;
-- Estudante: RA (Identificação), curso, dt inicio, data prevista de termino;
+- Estudante: RA (Identificação), curso, dt inicio, data prevista de termino, devedor;
 - Funcionario: Matricula (id), data de admissão, cargo;
 - Livro: Titulo, editora, dt de lançamento;
 - Empréstimo: servidor, qual o livro, dt do emprestimo, dt de devolução, estudante

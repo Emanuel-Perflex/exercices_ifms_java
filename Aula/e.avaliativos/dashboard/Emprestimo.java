@@ -1,5 +1,5 @@
 package dashboard;
 
-public class Emprestimo {
-    
+public class Emprestimo   {
+   
 }

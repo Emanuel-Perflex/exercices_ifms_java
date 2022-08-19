@@ -8,7 +8,7 @@ public class Pessoa {
     private String dataNascimento;
     private String logradouro;
     private String telefonePrincipal;
-    private boolean devedor;
+    
 
     public String getNome() {
         return this.nome;
@@ -48,14 +48,6 @@ public class Pessoa {
 
     public void setTelefonePrincipal(String telefonePrincipal) {
         this.telefonePrincipal = telefonePrincipal;
-    }
-
-    public boolean isDevedor() {
-        return this.devedor;
-    }
-
-    public void setDevedor(boolean devedor) {
-        this.devedor = devedor;
-    }
     
+
 }

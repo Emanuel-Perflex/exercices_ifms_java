@@ -1,5 +1,5 @@
 package dashboard;
 
-public class Cadastro {
+public class Funcionario {
     
 }
