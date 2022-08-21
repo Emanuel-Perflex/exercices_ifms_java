@@ -48,6 +48,14 @@ public class Pessoa {
 
     public void setTelefonePrincipal(String telefonePrincipal) {
         this.telefonePrincipal = telefonePrincipal;
+    }
     
+    //converter String para idade
+
+    //TO string
+    @Override
+    public String toString() {
+        return "Nome: " + getNome() + "\nCPF: " + getCpf() + "\nIdade: ";
+    }
 
 }
