@@ -68,19 +68,11 @@ public class Pessoa {
  * ..compartilhados para averiguação competente. 
 */
 
-
-    //1 - Método para pegar o nome do sujeito
-    public void pegarNome(){
-    
-
-
-    }
-
-    //2. Método para capturar o cpf e colocar uma máscara nele
+    //1. Método para capturar o cpf e colocar uma máscara nele
     //Solução baseada em: https://www.guj.com.br/t/formatar-string-com-mascara-de-cnpj/353602/2
     public void informarCPF() throws ParseException{
         Scanner scan = new Scanner(System.in);
-        String cpf = scan.nextLine();
+        this.cpf = scan.nextLine();
         
         MaskFormatter mask = new MaskFormatter("###.###.###-##");
         mask.setValueContainsLiteralCharacters(false);
@@ -89,11 +81,11 @@ public class Pessoa {
     }
 
 
-    //3. Converter String para idade
+    //2. Converter String para idade
     //Solução baseada na aula do professor José Roberto no dia 17/08
     public void dizerIdade (){
         Scanner data = new Scanner(System.in);
-        dataNascimento = data.nextLine();
+        this.dataNascimento = data.nextLine();
         LocalDateTime date = LocalDateTime.parse(dataNascimento,
         //Coloque getDefault para ser possível pegar do sistema vigente onde está sendo rodado o jvm
         DateTimeFormatter.ofPattern("M/d/uuuu", Locale.getDefault()));
