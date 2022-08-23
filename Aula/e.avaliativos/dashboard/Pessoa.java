@@ -92,10 +92,5 @@ public class Pessoa {
         System.out.println("Para idade: " + date.format(DateTimeFormatter.ofPattern("M/d/uuu", Locale.getDefault())));
     }
 
-    //TO string
-    //Polimorfismo básico
-    @Override
-    public String toString() {
-        return "Nome: " + getNome() + "\nCPF: " + getCpf() + "\nIdade: ";
-    }
+    ///Cheguei na conclusão que não será necessário polimorfimo, pois o sistema deve cadastrar as informações de cada cliente num array especifico.
 }
