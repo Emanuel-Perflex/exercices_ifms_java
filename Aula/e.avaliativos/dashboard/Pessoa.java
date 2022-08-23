@@ -2,8 +2,8 @@ package dashboard;
 //Se o cidadão já estiver devendo um livro, não será possível que o mesmo consiga realizar o empréstimo de outro
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.Locale;
+import java.util.Scanner;
 
 public class Pessoa {
     private String nome;
@@ -54,8 +54,10 @@ public class Pessoa {
     }
     
     //converter String para idade
-    public void DizerIdade (String data){
-        LocalDateTime date = LocalDateTime.parse(data,
+    public void DizerIdade (){
+        Scanner data = new Scanner(System.in);
+        dataNascimento = data.nextLine();
+        LocalDateTime date = LocalDateTime.parse(dataNascimento,
         DateTimeFormatter.ofPattern("M/d/uuuu", Locale.ENGLISH));
     }
 
