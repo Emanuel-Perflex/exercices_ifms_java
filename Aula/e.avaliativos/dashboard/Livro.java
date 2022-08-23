@@ -31,4 +31,5 @@ public class Livro extends Autor{
         this.dtLancamento = dtLancamento;
     }
 
+//Ia colocar um método para converter string em data, mas de acordo o esquema o atributo tem que ser localDate
 }
