@@ -2,7 +2,6 @@ package robo;
 
 import java.util.Scanner;
 
-//A ideia é tratar tudo como vetores, então pra funcionar...
 public class Robo {
     //Coordenada x e y do ponto inicial
     private int x;
@@ -73,6 +72,9 @@ public class Robo {
     }
 
 //--------------------Métodos adicionais------------------------------//
+    /* 
+
+    //Método descontinuado por hora, ao invés disso um while true vai ler as setas e retornar a posição;
 
     public void leitura (){
         Scanner ler = new Scanner(System.in);
@@ -88,27 +90,25 @@ public class Robo {
             direita();;
         }
     }
+    */
+
     //Método da distancia, que consiste num teorema de pitagoras simples;
     public void distancia (){
         double distancia = Math.sqrt(Math.pow(x - calcX, 2) + Math.pow(y - calcY, 2));
         System.out.println("A distância percorrida foi de: (" + distancia + ")");
+        //Foi necessário zerar para próximas utilizações;
         distancia = 0;
         this.calcX = 0;
         this.calcY = 0;
     }
 
-    //Função para caso o usuário queira sair de um ponto especifico e ir para outro
+    //Função para caso o usuário queira sair de um ponto especifico e ir para outro;
     public void coordenadas (){
         Scanner ler = new Scanner(System.in);
-        int x1 = ler.nextInt();
-        int x2 = ler.nextInt();
-        int y1 = ler.nextInt();
-        int y2 = ler.nextInt();
-        
-        this.x = x1;
-        this.calcX = x2;
-        this.y = y1;
-        this.calcY = y2;
+        int x1 = this.x;
+        int x2 = this.calcX;
+        int y1 = this.y;
+        int y2 = this.calcY;
 
         double distancia = Math.sqrt(Math.pow(x - calcX, 2) + Math.pow(y - calcY, 2));
         System.out.println("As cordenadas iniciais inseridas foram: (" + x + "," + calcX + ")");
