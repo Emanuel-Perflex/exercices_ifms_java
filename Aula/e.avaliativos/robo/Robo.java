@@ -3,7 +3,7 @@ package robo;
 import java.util.Scanner;
 
 //A ideia é tratar tudo como vetores, então pra funcionar...
-public class Robo implements KeyListener{
+public class Robo {
     //Coordenada x e y do ponto inicial
     private int x;
     private int y;
@@ -12,6 +12,7 @@ public class Robo implements KeyListener{
     private int calcX = 0;
     private int calcY = 0;
 
+//--------------------Getters e Setters-------------------------//
     public int getX() {
         return x;
     }
@@ -50,44 +51,28 @@ public class Robo implements KeyListener{
     public void cima (){
         this.calcY = this.y;
         this.y++;
-        System.out.println("\nA posição agora é: (" + x + "," + y + ")");
+        System.out.println("\nposição atual: (" + x + "," + y + ")");
     }
 
     public void baixo (){
         this.calcY = this.y;
         this.y--;
-        System.out.println("\nA posição agora é: (" + x + "," + y + ")");
+        System.out.println("\nposição atual: (" + x + "," + y + ")");
     }
     
     public void esquerda (){
         this.calcX = this.x;
         this.x--;
-        System.out.println("\nA posição agora é: (" + x + "," + y + ")");
+        System.out.println("\nposição atual: (" + x + "," + y + ")");
     }
 
     public void direita (){
         this.calcX = this.x;
         this.x++;
-        System.out.println("\nA posição agora é: (" + x + "," + y + ")");
+        System.out.println("\nposição atual: (" + x + "," + y + ")");
     }
 
-    public void joystick(KeyEvent tecla){
-        //Seta P/ baixo
-        if (tecla.getKeyCode()==40){
-        }
-        //Seta P/ cima        
-        if (tecla.getKeyCode()==38){
-        }
-        //Seta P/ direita
-        if (tecla.getKeyCode()==39){
-        }
-        //Seta P/ esquerda
-        if (tecla.getKeyCode()==37){
-        }
-         
-       
-    }
-
+//--------------------Métodos adicionais------------------------------//
 
     public void leitura (){
         Scanner ler = new Scanner(System.in);
