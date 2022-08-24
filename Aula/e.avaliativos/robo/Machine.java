@@ -6,25 +6,18 @@ public class Machine {
     
     public static void main(String[] args) {
         Robo maquina = new Robo();
-        
-        Scanner opcao = new Scanner(System.in);
-        
+        maquina.setX(0);
+        maquina.setY(0);
 
-        while (true){
+        Scanner scanner = new Scanner(System.in);
 
-            System.out.println("\nGostaria de controlar por joystick?");
-            String leitura = opcao.nextLine(); 
+        //A ideia é dar a opção de controle por coordenada ao usuário, ou por joystick;
+        while (true) {
+            System.out.println("Bem vindo ao roboMania 2.0");
+            System.out.println("Gostaria de jogar por Joystick ou por Coordenadas?");
+            scanner.nextLine();
 
-            if (leitura.equals("Sim") || leitura.equals("sim")){
-                while (true) {
-                    maquina.leitura();
-                    maquina.distancia();    
-                }
-            } else {
-                System.out.println("Insira as coordenadas iniciais e a do destino");
-                maquina.coordenadas();
-                break;
-            }
+            //Trabalhar com switch case
         }
     }
 }

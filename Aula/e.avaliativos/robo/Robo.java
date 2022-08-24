@@ -1,12 +1,14 @@
 package robo;
 
 import java.util.Scanner;
-import javax.imageio.plugins.tiff.GeoTIFFTagSet;
 
-public class Robo {
-    //lados
-    private int x = 0;
-    private int y = 0;
+//A ideia é tratar tudo como vetores, então pra funcionar...
+public class Robo implements KeyListener{
+    //Coordenada x e y do ponto inicial
+    private int x;
+    private int y;
+
+    //Serão as coringas para salvar as posições iniciais quando se pular posições
     private int calcX = 0;
     private int calcY = 0;
 
@@ -42,6 +44,9 @@ public class Robo {
         this.calcY = calcY;
     }
 
+
+//-------------------------Métodos Cardinais-------------------------//
+    
     public void cima (){
         this.calcY = this.y;
         this.y++;
@@ -66,6 +71,24 @@ public class Robo {
         System.out.println("\nA posição agora é: (" + x + "," + y + ")");
     }
 
+    public void joystick(KeyEvent tecla){
+        //Seta P/ baixo
+        if (tecla.getKeyCode()==40){
+        }
+        //Seta P/ cima        
+        if (tecla.getKeyCode()==38){
+        }
+        //Seta P/ direita
+        if (tecla.getKeyCode()==39){
+        }
+        //Seta P/ esquerda
+        if (tecla.getKeyCode()==37){
+        }
+         
+       
+    }
+
+
     public void leitura (){
         Scanner ler = new Scanner(System.in);
         String comando = ler.nextLine();
@@ -80,7 +103,7 @@ public class Robo {
             direita();;
         }
     }
-
+    //Método da distancia, que consiste num teorema de pitagoras simples;
     public void distancia (){
         double distancia = Math.sqrt(Math.pow(x - calcX, 2) + Math.pow(y - calcY, 2));
         System.out.println("A distância percorrida foi de: (" + distancia + ")");
@@ -89,6 +112,7 @@ public class Robo {
         this.calcY = 0;
     }
 
+    //Função para caso o usuário queira sair de um ponto especifico e ir para outro
     public void coordenadas (){
         Scanner ler = new Scanner(System.in);
         int x1 = ler.nextInt();
