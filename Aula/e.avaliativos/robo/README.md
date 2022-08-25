@@ -1,8 +1,8 @@
 
-                                        |Documentação Pessoal|
-//------------------------------------=>                      <=----------------------------------------//
+<div align="center">|Documentação Pessoal|</div>
+//---------------------------------------------------------------=>                      <=---------------------------------------------------------------//
 
-    📄 No documento 'Robo.java'
+<div align="center">📄 No documento 'Robo.java'</div>
 
     1. A ideia inicial é tratar tudo com pares ordenados mátematicos (Xo,Yo) e (X,Y)
        1.1 - Para tal é necessário que se declare X e Y, e para otimização utilizar 2 coringas;
@@ -22,8 +22,7 @@
     5. O método coordenada tem a função de realizar a fórmula de distancia vetorial (Teorema de pitágoras basicamente) para voltar a distancia entre 2 pontos;
 
 //------------------------------------------------------------------------------------------------------//
-
-    📄 No documento 'Machine.java'
+<div align="center">📄 No documento 'Machine.java'</div>
 
     1 - A princípio a motivação se baseava em fazer tudo 100% no terminal, porém houveram mudanças de planos e os seguintes pontos são relevantes:
         1.1 - Se observar o histórico de commits observará mudanças repentinas de lógica. A ideia inicial era tratar tudo no terminal. A ideia conseguinte foi tratar tudo com swing utilizando teclas, mas após 12horas de fracasso sem solução um novo método mais fácil foi aplicado, tratar tudo com buttons do Jframe da Swing java. 
@@ -32,12 +31,20 @@
         
         //OBS - Para fins de Bibliografia, os locais consultados para construir minha ideia durantes o processo de criação foram: 
 
-        .https://pt.stackoverflow.com/questions/156239/adicionar-fun%C3%A7%C3%B5es-em-botoes-de-aplica%C3%A7%C3%A3o-gr%C3%A1fica 
-        .https://www.youtube.com/watch?v=5o3fMLPY7qY&t=601s
-        .https://www.guj.com.br/t/capturar-evento-de-teclado/68289/7
-        .https://pt.stackoverflow.com/questions/22913/qual-a-finalidade-da-override
-        .https://www.youtube.com/watch?v=80w8995J6EA
-        .https://medium.com/@rafaelvicio/trabalhando-com-imutabilidade-no-java-a4225fbddefc
-        .https://www.youtube.com/watch?v=qKOoFiepAt0
-        .https://www.youtube.com/watch?v=Hlrm4n4fnIM
+        <a href="https://pt.stackoverflow.com/questions/156239/adicionar-fun%C3%A7%C3%B5es-em-botoes-de-aplica%C3%A7%C3%A3o-gr%C3%A1fica"></a>
+
+        <a href="https://www.youtube.com/watch?v=5o3fMLPY7qY&t=601s">Link 1</a>
+        <a href=".https://www.guj.com.br/t/capturar-evento-de-teclado/68289/7">Link 2</a>
+        <a href=".https://pt.stackoverflow.com/questions/22913/qual-a-finalidade-da-override">Link 3</a>
+        <a href=".https://www.youtube.com/watch?v=80w8995J6EA">Link 4</a>
+        <a href=".https://medium.com/@rafaelvicio/trabalhando-com-imutabilidade-no-java-a4225fbddefc">Link 5</a>
+        <a href=".https://www.youtube.com/watch?v=qKOoFiepAt0">Link 6</a>
+        <a href=".https://www.youtube.com/watch?v=Hlrm4n4fnIM">Link 7</a>
+
+        
+        
+        
+        
+        
+        
             
