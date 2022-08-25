@@ -44,7 +44,6 @@ public class Robo {
         this.calcY = calcY;
     }
 
-
 //-------------------------Métodos Cardinais-------------------------//
     
     public void cima (){
@@ -72,32 +71,12 @@ public class Robo {
     }
 
 //--------------------Métodos adicionais------------------------------//
-    /* 
-    //Método descontinuado por hora, ao invés disso um while true vai ler as setas e retornar a posição;
-    public void leitura (){
-        Scanner ler = new Scanner(System.in);
-        String comando = ler.nextLine();
-        
-        if (comando.equals("w")){
-            cima();
-        } else if (comando.equals("a")){
-            esquerda();
-        } else if (comando.equals("s")){
-            baixo();
-        } else if (comando.equals("d")){
-            direita();;
-        }
-    }
-    */
-
+   
     //Método da distancia, que consiste num teorema de pitagoras simples;
-    public void distancia (){
+    public void distancia (int x, int y, int calcX, int calcY){
         double distancia = Math.sqrt(Math.pow(x - calcX, 2) + Math.pow(y - calcY, 2));
         System.out.println("A distância percorrida foi de: (" + distancia + ")");
-        //Foi necessário zerar para próximas utilizações;
         distancia = 0;
-        this.calcX = 0;
-        this.calcY = 0;
     }
 
     //Função para caso o usuário queira sair de um ponto especifico e ir para outro;
@@ -110,16 +89,15 @@ public class Robo {
         this.y = 0;
         //Procedimentos//
         
-        //Xo e Yo;
+        //Xo e X
         this.calcX = ler.nextInt();
-        this.calcY = ler.nextInt();
-        //X e Y
         this.x = ler.nextInt();
+        //Yo e Y
+        this.calcY = ler.nextInt();
         this.y = ler.nextInt();
 
-        double distancia = Math.sqrt(Math.pow(x - calcX, 2) + Math.pow(y - calcY, 2));
         System.out.println("As cordenadas iniciais inseridas foram: (" + x + "," + calcX + ")");
         System.out.println("E as coordenadas finais inseridas foram: (" + y + "," + calcY + ")");
-        System.out.println("A distância percorrida foi de: (" + distancia + ")");
+        distancia(x, y, calcX, calcY);
     }
 }
