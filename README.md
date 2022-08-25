@@ -11,7 +11,7 @@
 <div>● Declaro que todo trabalho contido aqui é de minha autoria SEM NENHUM COMMIT OU PEDAÇO DE CÓDIGO ALHEIO com salvas excessões de fóruns como StackOvewflow cuja documentação será provida de link.
 </div>
 
-<div>● Declaro também, que se em dia de avaliação algum código obtiver lógica que siga o meu padrão (Infração já explanada em aula pelo professor José Roberto) em sua estrutura não parte de mim a infração! Agradeço a leitura e compreensão 👍</div>
+<div>● Declaro também que se em dia de avaliação algum código obter lógica que siga o meu padrão (Infração já explanada em aula pelo professor José Roberto) em sua estrutura, não parte de mim a infração! Agradeço a leitura e compreensão 👍</div>
 
 
  ![Screenshot](/Imagens%20para%20documenta%C3%A7%C3%A3o/clone.png)
