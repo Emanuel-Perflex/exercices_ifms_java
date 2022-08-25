@@ -7,37 +7,21 @@ import javax.swing.JFrame;
 
 public class CapturarTeclado extends JFrame{
     //Método responsável por capturar a tecla e então tratar ela
-    public void Teclado(){
+    public CapturarTeclado(){
+
     addKeyListener(new KeyAdapter() {
-        public void teclaṔressionada(KeyEvent tecla){
-            int cod = tecla.getKeyCode();
+
+        public void keyPressed(KeyEvent tecla){
+            char cod = tecla.getKeyChar();
             //int up = KeyEvent.VK_UP;
             //int down = KeyEvent.VK_DOWN;
-            //int left = KeyEvent.VK_LEFT;
             //int right = KeyEvent.VK_RIGHT;
+            System.out.println(cod);
+
+            //Robo machine = new Robo();
             
-            Robo machine = new Robo();
-
-            switch (cod) {
-                case KeyEvent.VK_UP:
-                    machine.cima();
-                    break;
-                case KeyEvent.VK_DOWN:
-                    machine.baixo();
-                    break;
-                case KeyEvent.VK_RIGHT:
-                    machine.direita();
-                    break;
-                case KeyEvent.VK_LEFT:
-                    machine.esquerda();
-                    break;        
-                default:
-                    System.out.println("Deu errado");
-                    break;
-            }
-
             /*if (cod == up){
-                machine.cima();    
+                machine.cima();
             } else if (cod == down) {
                 machine.baixo();
             } else if (cod == left) {
@@ -49,10 +33,9 @@ public class CapturarTeclado extends JFrame{
             } */   
             
         }});
-
         setSize(500,400);
-        setLocationRelativeTo(this);
-        setVisible(true);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLocationRelativeTo(this);
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 }

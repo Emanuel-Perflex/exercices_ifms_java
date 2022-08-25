@@ -17,6 +17,8 @@ public class Machine {
         System.out.println("Gostaria de jogar por 1_ Joystick ou por 2_Coordenadas?");
         int opcao = scanner.nextInt();
 
+        //CapturarTeclado tecla = new CapturarTeclado();
+
         switch (opcao) {
             case 1:
                 new CapturarTeclado();

@@ -12,6 +12,7 @@ public class Robo {
     private int calcY = 0;
 
 //--------------------Getters e Setters-------------------------//
+//Nenhum get foi usado, deixado apenas para fins didáticos
     public int getX() {
         return x;
     }
