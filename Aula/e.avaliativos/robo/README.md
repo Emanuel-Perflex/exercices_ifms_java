@@ -35,15 +35,14 @@
         
         //OBS - Para fins de Bibliografia, os locais consultados para construir minha ideia durantes o processo de criação foram: 
 
-        [https://pt.stackoverflow.com/questions/156239/adicionar-fun%C3%A7%C3%B5es-em-botoes-de-aplica%C3%A7%C3%A3o-gr%C3%A1fica](Link 1-README.md)
-
-        <a href="https://www.youtube.com/watch?v=5o3fMLPY7qY&t=601s">Link 1</a>
-        <a href=".https://www.guj.com.br/t/capturar-evento-de-teclado/68289/7">Link 2</a>
-        <a href=".https://pt.stackoverflow.com/questions/22913/qual-a-finalidade-da-override">Link 3</a>
-        <a href=".https://www.youtube.com/watch?v=80w8995J6EA">Link 4</a>
-        <a href=".https://medium.com/@rafaelvicio/trabalhando-com-imutabilidade-no-java-a4225fbddefc">Link 5</a>
-        <a href=".https://www.youtube.com/watch?v=qKOoFiepAt0">Link 6</a>
-        <a href=".https://www.youtube.com/watch?v=Hlrm4n4fnIM">Link 7</a>
+        https://pt.stackoverflow.com/questions/156239/adicionar-fun%C3%A7%C3%B5es-em-botoes-de-aplica%C3%A7%C3%A3o-gr%C3%A1fica
+        https://www.youtube.com/watch?v=5o3fMLPY7qY&t=601s">Link 1
+        https://www.guj.com.br/t/capturar-evento-de-teclado/68289/7">Link 2
+        https://pt.stackoverflow.com/questions/22913/qual-a-finalidade-da-override
+        https://www.youtube.com/watch?v=80w8995J6EA
+        https://medium.com/@rafaelvicio/trabalhando-com-imutabilidade-no-java-a4225fbddefc
+        https://www.youtube.com/watch?v=qKOoFiepAt0
+        https://www.youtube.com/watch?v=Hlrm4n4fnIM
 
         
         
