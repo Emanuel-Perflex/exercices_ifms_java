@@ -1,6 +1,8 @@
 
 <div align="center">|Documentação Pessoal|</div>
-//---------------------------------------------------------------=>                      <=---------------------------------------------------------------//
+
+<div align="center">//---------------------------------------------------------------=>                      <=---------------------------------------------------------------//</div>
+
 
 <div align="center">📄 No documento 'Robo.java'</div>
 
@@ -21,7 +23,9 @@
     
     5. O método coordenada tem a função de realizar a fórmula de distancia vetorial (Teorema de pitágoras basicamente) para voltar a distancia entre 2 pontos;
 
-//------------------------------------------------------------------------------------------------------//
+
+<div align="center">//--------------------------------------------------------------------------------------------------------//</div>
+/
 <div align="center">📄 No documento 'Machine.java'</div>
 
     1 - A princípio a motivação se baseava em fazer tudo 100% no terminal, porém houveram mudanças de planos e os seguintes pontos são relevantes:
