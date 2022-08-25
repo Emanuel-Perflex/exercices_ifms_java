@@ -35,7 +35,7 @@
         
         //OBS - Para fins de Bibliografia, os locais consultados para construir minha ideia durantes o processo de criação foram: 
 
-        <a href="https://pt.stackoverflow.com/questions/156239/adicionar-fun%C3%A7%C3%B5es-em-botoes-de-aplica%C3%A7%C3%A3o-gr%C3%A1fica"></a>
+        [https://pt.stackoverflow.com/questions/156239/adicionar-fun%C3%A7%C3%B5es-em-botoes-de-aplica%C3%A7%C3%A3o-gr%C3%A1fica](Link 1-README.md)
 
         <a href="https://www.youtube.com/watch?v=5o3fMLPY7qY&t=601s">Link 1</a>
         <a href=".https://www.guj.com.br/t/capturar-evento-de-teclado/68289/7">Link 2</a>
