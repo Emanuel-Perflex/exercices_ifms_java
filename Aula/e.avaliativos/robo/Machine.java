@@ -2,16 +2,13 @@ package robo;
 
 //Bilbiotecas padrões
 import java.util.Scanner;
-import java.awt.event.KeyEvent;
 import java.awt.BorderLayout;
-import java.awt.event.KeyAdapter;
 import java.awt.GridLayout;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -38,21 +35,34 @@ import java.awt.event.ActionListener;
             painel.setLayout(new GridLayout(0, 1));
             painel.add(etiquetaMain);
 
+            //Ao botão de cima eu atribui o Override padrão mesmo por preguiça. Também funciona;
             painel.add(cima);
             cima.addActionListener(this);
 
+            //Adicionando função a botão de baixo;
             painel.add(baixo);
             baixo.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    y--;
+                    etiquetaMain.setText("As coordenadas atuais são: (" + x + "," + y + ")");
+                }
+            });
+            //Adicionando função a botão da esquerda;
+            painel.add(esquerda);
+            esquerda.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     x--;
                     etiquetaMain.setText("As coordenadas atuais são: (" + x + "," + y + ")");
                 }
             });
-
-
-
-            painel.add(esquerda);
+            //Adicionando função a botão da direita;
             painel.add(direita);
+            direita.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    x--;
+                    etiquetaMain.setText("As coordenadas atuais são: (" + x + "," + y + ")");
+                }
+            });
 
             frame.add(painel, BorderLayout.CENTER);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -93,7 +103,7 @@ import java.awt.event.ActionListener;
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        x++;
+        y++;
         etiquetaMain.setText("As coordenadas atuais são: (" + x + "," + y + ")");
     }
 

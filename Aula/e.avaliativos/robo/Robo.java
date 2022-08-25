@@ -12,22 +12,7 @@ public class Robo {
     private int calcY = 0;
 
 //--------------------Getters e Setters-------------------------//
-//Nenhum get foi usado, deixado apenas para fins didáticos
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public int getCalcX() {
-        return calcX;
-    }
-
-    public int getCalcY() {
-        return calcY;
-    }
+//Nenhum get foi usado, portanto foram retirados;
 
     public void setX(int x) {
         this.x = x;
@@ -43,28 +28,6 @@ public class Robo {
 
     public void setCalcY(int calcY) {
         this.calcY = calcY;
-    }
-
-//-------------------------Métodos Cardinais-------------------------//
-    
-    public void cima(){
-        this.y++;
-        System.out.println("A posição atual é: " + getY());
-    }
-
-    public void baixo (){
-        this.y--;
-        System.out.println("\nposição atual: (" + this.x + "," + this.y + ")");
-    }
-    
-    public void esquerda (){
-        this.x--;
-        System.out.println("\nposição atual: (" + this.x + "," + this.y + ")");
-    }
-
-    public void direita (){
-        this.x++;
-        System.out.println("\nposição atual: (" + this.x + "," + this.y + ")");
     }
 
 //--------------------Métodos adicionais------------------------------//
