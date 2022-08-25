@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Robo {
     //Coordenada x e y do ponto inicial
-    private int x;
-    private int y;
+    private int x = 0;
+    private int y = 0;
 
     //Serão as coringas para salvar as posições iniciais quando se pular posições
     private int calcX = 0;
@@ -49,7 +49,7 @@ public class Robo {
     
     public void cima(){
         this.y++;
-        System.out.println("\nposição atual: (" + this.x + "," + this.y + ")");
+        System.out.println("A posição atual é: " + getY());
     }
 
     public void baixo (){

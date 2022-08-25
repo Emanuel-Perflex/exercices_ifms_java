@@ -16,20 +16,25 @@ public class CapturarTeclado extends JFrame{
         public void keyPressed(KeyEvent tecla){
             int cod = tecla.getKeyCode();
             Robo maquina = new Robo();
-            int x = 0;
 
-            if (cod == KeyEvent.VK_UP){
-                x++;
-                System.out.println(x);
-            } else if (cod == KeyEvent.VK_DOWN) {
-                maquina.baixo();
-            } else if (cod == KeyEvent.VK_LEFT) {
-                maquina.esquerda();
-            } else if (cod == KeyEvent.VK_RIGHT) {
-                maquina.direita();
-            } else {
-                System.out.println("Tecla não reconhecida");
-            }    
+
+            switch (cod) {
+                case KeyEvent.VK_UP:
+                    maquina.cima();
+                    System.exit(0);
+                case KeyEvent.VK_DOWN:
+                    maquina.baixo();
+                    break;
+                case KeyEvent.VK_LEFT:
+                    maquina.esquerda();
+                    break;
+                case KeyEvent.VK_RIGHT:
+                    maquina.direita();    
+                    break;    
+                default:
+                    System.out.println("Erro");
+                    System.exit(0);
+            }
             
         }});
         //Mensagem ao usuário
