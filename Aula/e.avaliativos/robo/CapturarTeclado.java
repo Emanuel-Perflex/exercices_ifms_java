@@ -12,15 +12,16 @@ public class CapturarTeclado extends JFrame{
     addKeyListener(new KeyAdapter() {
 
         public void keyPressed(KeyEvent tecla){
-            char cod = tecla.getKeyChar();
-            //int up = KeyEvent.VK_UP;
-            //int down = KeyEvent.VK_DOWN;
-            //int right = KeyEvent.VK_RIGHT;
+            int cod = tecla.getKeyCode();
+            int up = KeyEvent.VK_UP;
+            int down = KeyEvent.VK_DOWN;
+            int right = KeyEvent.VK_RIGHT;
+            int left = KeyEvent.VK_LEFT;
             System.out.println(cod);
 
-            //Robo machine = new Robo();
+            Robo machine = new Robo();
             
-            /*if (cod == up){
+            if (cod == up){
                 machine.cima();
             } else if (cod == down) {
                 machine.baixo();
@@ -30,7 +31,7 @@ public class CapturarTeclado extends JFrame{
                 machine.direita();
             } else {
                 System.out.println("Tecla não reconhecida");
-            } */   
+            }    
             
         }});
         setSize(500,400);
