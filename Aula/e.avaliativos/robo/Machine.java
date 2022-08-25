@@ -40,13 +40,24 @@ import java.awt.event.ActionListener;
 
             painel.add(cima);
             cima.addActionListener(this);
+
             painel.add(baixo);
+            baixo.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    x--;
+                    etiquetaMain.setText("As coordenadas atuais são: (" + x + "," + y + ")");
+                }
+            });
+
+
+
             painel.add(esquerda);
             painel.add(direita);
 
             frame.add(painel, BorderLayout.CENTER);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.pack();
+            frame.setLocationRelativeTo(null); 
             frame.setTitle("RoboMania"); 
             frame.setSize(600,200);
             //Deixar vísivel
@@ -85,4 +96,5 @@ import java.awt.event.ActionListener;
         x++;
         etiquetaMain.setText("As coordenadas atuais são: (" + x + "," + y + ")");
     }
+
 }
