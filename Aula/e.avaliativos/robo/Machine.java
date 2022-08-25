@@ -8,26 +8,27 @@ public class Machine {
         Robo maquina = new Robo();
         maquina.setX(0);
         maquina.setY(0);
+        maquina.setCalcX(0);
+        maquina.setCalcY(0);
 
         Scanner scanner = new Scanner(System.in);
         //Decidi dar o nome ao joguinho de roboMania, a ideia veio de um epsódio de: "As 3 espiãs demais"
-        System.out.println("Bem vindo ao roboMania 2.0");
-        System.out.println("Gostaria de jogar por Joystick ou por Coordenadas?");
-        scanner.nextLine();
+        System.out.println("\nBem vindo ao roboMania 2.0");
+        System.out.println("Gostaria de jogar por 1_ Joystick ou por Coordenadas?");
+        int opcao = scanner.nextInt();
 
-        //A ideia é dar a opção de controle por coordenada ao usuário, ou por joystick;
-        while (true) {
-            //Rosto do robozinho
-            
-            
-            if (scanner.equals("Joystick") || scanner.equals("joystick")){
-                new CapturarTeclado();
-            } else if (scanner.equals("Coordenadas") || scanner.equals("coordenadas")) {
+        switch (opcao) {
+            case 1:
+                CapturarTeclado teclado = new CapturarTeclado();
+                teclado.Teclado();    
+                break;
+            case 2:
                 maquina.coordenadas();
-            } else {
-                System.out.println("Infelizmente não foi possível reconhecer o que foi digitado. Execute novamente e digite ''Coordenadas'' ou ''Joystick'' para solicitar o meio desejado");
-            }
-            
+                break;
+            default:
+                System.out.println("Input não reconhecido, tente novamente");
+                break;
         }
+
     }
 }
