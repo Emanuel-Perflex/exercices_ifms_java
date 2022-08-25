@@ -47,28 +47,24 @@ public class Robo {
 
 //-------------------------Métodos Cardinais-------------------------//
     
-    public void cima (){
-        this.calcY = this.y;
+    public void cima(){
         this.y++;
-        System.out.println("\nposição atual: (" + x + "," + y + ")");
+        System.out.println("\nposição atual: (" + this.x + "," + this.y + ")");
     }
 
     public void baixo (){
-        this.calcY = this.y;
         this.y--;
-        System.out.println("\nposição atual: (" + x + "," + y + ")");
+        System.out.println("\nposição atual: (" + this.x + "," + this.y + ")");
     }
     
     public void esquerda (){
-        this.calcX = this.x;
         this.x--;
-        System.out.println("\nposição atual: (" + x + "," + y + ")");
+        System.out.println("\nposição atual: (" + this.x + "," + this.y + ")");
     }
 
     public void direita (){
-        this.calcX = this.x;
         this.x++;
-        System.out.println("\nposição atual: (" + x + "," + y + ")");
+        System.out.println("\nposição atual: (" + this.x + "," + this.y + ")");
     }
 
 //--------------------Métodos adicionais------------------------------//

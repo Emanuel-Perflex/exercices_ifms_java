@@ -6,10 +6,6 @@ import java.util.Scanner;
 public class Machine {
     public static void main(String[] args) {
         Robo maquina = new Robo();
-        maquina.setX(0);
-        maquina.setY(0);
-        maquina.setCalcX(0);
-        maquina.setCalcY(0);
 
         Scanner scanner = new Scanner(System.in);
         //Decidi dar o nome ao joguinho de roboMania, a ideia veio de um epsódio de: "As 3 espiãs demais"
@@ -21,7 +17,7 @@ public class Machine {
 
         switch (opcao) {
             case 1:
-                new CapturarTeclado();
+                new CapturarTeclado();    
                 break;
             case 2:
                 maquina.coordenadas();
