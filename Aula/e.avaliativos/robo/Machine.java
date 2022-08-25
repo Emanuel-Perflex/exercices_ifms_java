@@ -7,49 +7,48 @@ import java.awt.BorderLayout;
 import java.awt.event.KeyAdapter;
 import java.awt.GridLayout;
 import javax.swing.BorderFactory;
-
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-    public class Machine extends JFrame{
+
+    public class Machine implements ActionListener{
+        int x = 0;
+        int y = 0;
+
+        //Devido ao meu insistente fracasso na tentativa de implementar o teclado, Farei com botões na base do clique mesmo;
         JFrame frame = new JFrame();
         JPanel painel = new JPanel();
-        JLabel etiqueta = new JLabel("Mova as Setas conforme Vontade");
-        JTextArea textArea = new JTextArea();
-        //Acionando o construtor
+        JLabel etiquetaMain = new JLabel("As coordenadas atuais são: (0,0)");
+
+        //Botões
+        JButton cima = new JButton("Cima");
+        JButton baixo = new JButton("Baixo");
+        JButton esquerda = new JButton("Esquerda");
+        JButton direita = new JButton("Direita");
         public Machine(){
-
-            addKeyListener(new KeyAdapter() {
-
-                public void keyPressed(KeyEvent tecla){
-                    int cod = tecla.getKeyCode();
-                    
-                    switch (cod) {
-                        case KeyEvent.VK_UP:
-                            textArea.setText("Tecla "+tecla.getKeyCode()+" foi pressionada");
-                        default:
-                            System.out.println("Erro");
-                            System.exit(0);
-                    }
-                    
-                }});
 
             //Configurações Painel
             painel.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
             painel.setLayout(new GridLayout(0, 1));
-            painel.add(etiqueta);
+            painel.add(etiquetaMain);
 
-            frame.add(etiqueta, BorderLayout.CENTER);
-            frame.add(textArea);
+            painel.add(cima);
+            cima.addActionListener(this);
+            painel.add(baixo);
+            painel.add(esquerda);
+            painel.add(direita);
+
+            frame.add(painel, BorderLayout.CENTER);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.pack();
             frame.setTitle("RoboMania"); 
-            frame.setSize(600,100);
-            //Centralizar janela
-            frame.setLocationRelativeTo(this);
+            frame.setSize(600,200);
             //Deixar vísivel
             frame.setVisible(true);
             
@@ -79,5 +78,11 @@ import javax.swing.JTextArea;
                 break;
         }
 
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        x++;
+        etiquetaMain.setText("As coordenadas atuais são: (" + x + "," + y + ")");
     }
 }
