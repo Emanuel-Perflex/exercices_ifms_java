@@ -6,6 +6,8 @@ import java.awt.event.KeyAdapter;
 import javax.swing.JFrame;
 
 public class CapturarTeclado extends JFrame{
+   
+
     //Método responsável por capturar a tecla e então tratar ela
     public CapturarTeclado(){
 
@@ -30,9 +32,13 @@ public class CapturarTeclado extends JFrame{
             }    
             
         }});
-        setSize(500,400);
-		setLocationRelativeTo(this);
+        //Mensagem ao usuário
+        setTitle("Mexa com as teclas para o robo se mexer");
+        //Tamanho do executável
+        setSize(600,0);
+        setLocationRelativeTo(this);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+        
     }
 }
