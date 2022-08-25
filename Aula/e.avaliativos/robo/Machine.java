@@ -14,13 +14,12 @@ public class Machine {
         Scanner scanner = new Scanner(System.in);
         //Decidi dar o nome ao joguinho de roboMania, a ideia veio de um epsódio de: "As 3 espiãs demais"
         System.out.println("\nBem vindo ao roboMania 2.0");
-        System.out.println("Gostaria de jogar por 1_ Joystick ou por Coordenadas?");
+        System.out.println("Gostaria de jogar por 1_ Joystick ou por 2_Coordenadas?");
         int opcao = scanner.nextInt();
 
         switch (opcao) {
             case 1:
-                CapturarTeclado teclado = new CapturarTeclado();
-                teclado.Teclado();    
+                new CapturarTeclado();
                 break;
             case 2:
                 maquina.coordenadas();

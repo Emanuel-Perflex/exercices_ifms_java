@@ -73,10 +73,8 @@ public class Robo {
 //--------------------Métodos adicionais------------------------------//
    
     //Método da distancia, que consiste num teorema de pitagoras simples;
-    public void distancia (int x, int y, int calcX, int calcY){
-        double distancia = Math.sqrt(Math.pow(x - calcX, 2) + Math.pow(y - calcY, 2));
-        System.out.println("A distância percorrida foi de: (" + distancia + ")");
-        distancia = 0;
+    public Double distancia (int x, int y, int calcX, int calcY){
+        return Math.sqrt(Math.pow(x - calcX, 2) + Math.pow(y - calcY, 2));
     }
 
     //Função para caso o usuário queira sair de um ponto especifico e ir para outro;
@@ -89,15 +87,20 @@ public class Robo {
         this.y = 0;
         //Procedimentos//
         
-        //Xo e X
+        //Xo e Yo
+        System.out.println("Xo: \t" );
         this.calcX = ler.nextInt();
-        this.x = ler.nextInt();
-        //Yo e Y
+        System.out.println("Yo: ");
         this.calcY = ler.nextInt();
+        //Yo e Y
+        System.out.println("X: ");
+        this.x = ler.nextInt();
+        System.out.println("Y: ");
         this.y = ler.nextInt();
 
-        System.out.println("As cordenadas iniciais inseridas foram: (" + x + "," + calcX + ")");
-        System.out.println("E as coordenadas finais inseridas foram: (" + y + "," + calcY + ")");
-        distancia(x, y, calcX, calcY);
+        System.out.println("As cordenadas iniciais do robô eram: (" + calcX + "," + calcY + ")");
+        System.out.println("E as coordenadas são: (" + x + "," + y + ")");
+        System.out.println("Logo, a distancia percorrida equivale a: " + distancia(x, y, calcX, calcY));    
+
     }
 }

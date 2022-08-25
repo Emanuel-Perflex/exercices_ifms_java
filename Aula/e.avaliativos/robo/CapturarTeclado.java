@@ -10,17 +10,34 @@ public class CapturarTeclado extends JFrame{
     public void Teclado(){
     addKeyListener(new KeyAdapter() {
         public void teclaṔressionada(KeyEvent tecla){
-            //Comparar código da tecla pressionada com a tecla que eu quero (Setas up, down, right e left)
             int cod = tecla.getKeyCode();
-            int up = KeyEvent.VK_UP;
-            int down = KeyEvent.VK_DOWN;
-            int left = KeyEvent.VK_LEFT;
-            int right = KeyEvent.VK_RIGHT;
+            //int up = KeyEvent.VK_UP;
+            //int down = KeyEvent.VK_DOWN;
+            //int left = KeyEvent.VK_LEFT;
+            //int right = KeyEvent.VK_RIGHT;
             
             Robo machine = new Robo();
 
-            if (cod == up){
-                machine.cima();
+            switch (cod) {
+                case KeyEvent.VK_UP:
+                    machine.cima();
+                    break;
+                case KeyEvent.VK_DOWN:
+                    machine.baixo();
+                    break;
+                case KeyEvent.VK_RIGHT:
+                    machine.direita();
+                    break;
+                case KeyEvent.VK_LEFT:
+                    machine.esquerda();
+                    break;        
+                default:
+                    System.out.println("Deu errado");
+                    break;
+            }
+
+            /*if (cod == up){
+                machine.cima();    
             } else if (cod == down) {
                 machine.baixo();
             } else if (cod == left) {
@@ -29,7 +46,7 @@ public class CapturarTeclado extends JFrame{
                 machine.direita();
             } else {
                 System.out.println("Tecla não reconhecida");
-            }    
+            } */   
             
         }});
 
