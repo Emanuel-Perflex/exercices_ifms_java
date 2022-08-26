@@ -1,15 +1,24 @@
 package dashboard.interfaces;
 
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 
 import java.awt.BorderLayout;
+import java.awt.Component;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
+import javax.swing.RootPaneContainer;
 
 import java.awt.GridLayout;
+
+import java.awt.Dimension;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /*
 
@@ -26,9 +35,19 @@ import java.awt.GridLayout;
  
  */
 
-public class InterfaceUm {
+public class InterfaceGeral implements ActionListener{
     JFrame main = new JFrame();
+
+    //Meus painéis
     JPanel p1 = new JPanel();
+    JPanel painelLivro = new JPanel();
+    JPanel painelFuncionario = new JPanel();
+    JPanel painelEstudante = new JPanel();
+    JPanel painelAutor = new JPanel();
+    JPanel painelEmprestimo = new JPanel();
+    JPanel painelDevolucao = new JPanel();
+    
+    //MInhas etiquetas
     JLabel etiqueta = new JLabel("Escolha a opção desejada:");
 
     JButton cadastrarLivro = new JButton("CadastrarLivro");
@@ -39,7 +58,7 @@ public class InterfaceUm {
     JButton receberEmprestimo = new JButton("Receber Emprestimo");
     JButton sair = new JButton("Sair");
 
-    public InterfaceUm(){
+    public InterfaceGeral(){
         p1.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
         p1.setLayout(new GridLayout(0, 1));
         
@@ -48,13 +67,17 @@ public class InterfaceUm {
 
         //livro
         p1.add(cadastrarLivro);
+        cadastrarLivro.addActionListener(this);
 
-        
+
 
 
 
         //Cadastrar Funcionario
         p1.add(cadastrarFuncionario);
+        
+
+
         //Funcionario
         p1.add(cadastrarEstudante);
         //Autor
@@ -69,7 +92,7 @@ public class InterfaceUm {
         
         
 
-
+//--------------------------------Configuração Da janela--------------------------------//
         main.add(p1, BorderLayout.CENTER);
         main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         main.pack();
@@ -77,5 +100,13 @@ public class InterfaceUm {
         main.setTitle("Cadastro Bibliotecário");
         main.setSize(800, 600);
         main.setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        System.out.println("salve");
+        p1.setVisible(false);
+        painelLivro.setVisible(true);
+
     }
 }
