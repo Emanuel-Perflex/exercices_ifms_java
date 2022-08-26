@@ -1,14 +1,15 @@
 package dashboard;
 
 import java.time.LocalDate;
+import java.util.Scanner;
 
-public class Livro extends Autor{
+public class Livro {
     private String titulo;
     private String editora;
     private LocalDate dtLancamento;
 
 
-    //------------------------------------//Getters e Setters\\-----------------------------//
+      //------------------------------------//Getters e Setters\\-----------------------------//
 
     public String getTitulo() {
         return this.titulo;
@@ -34,5 +35,13 @@ public class Livro extends Autor{
         this.dtLancamento = dtLancamento;
     }
 
-//Ia colocar um método para converter string em data, mas de acordo o esquema o atributo tem que ser localDate
+    //------------------------------------//Métodos\\-----------------------------//
+    public void cadastrarLivro(){
+        System.out.println("Informe o nome do livro");
+        Scanner scanner = new Scanner(System.in);
+        String opcao = scanner.nextLine();
+        
+        System.out.println(opcao);
+
+    }
 }

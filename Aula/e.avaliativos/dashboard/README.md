@@ -4,10 +4,7 @@
 
 ##
 
-Algumas Alterações pertinentes foram realizadas: 
-    ●   1 - Para fins de conhecimento, irei adicionar mais atributos em cada classe com informações pertinentes a herança;
-    
-    ●   2 - Todo o código foi feito para se adequar ao JFRAME; 
+    ●  Como o professor José Roberto realizou uma parte do código em aula, me inspirei em sua lógica e código já pertinentemente escrito e apenas continuei o trabalho.
 
 ##
 
