@@ -1,42 +1,20 @@
 package dashboard.interfaces;
-
-
+//imports
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
-import javax.swing.JComponent;
-
 import java.awt.BorderLayout;
-import java.awt.Component;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.RootPaneContainer;
+import javax.swing.JTextArea;
 
 import java.awt.GridLayout;
-
-import java.awt.Dimension;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/*
-
-    "|                 Escolha um opção:                  |",
-    "| -------------------------------------------------- | ",
-    "| 1 - Cadastrar Livro                                |",
-    "| 2 - Cadastrar Funcionario                          |",
-    "| 3 - Cadastrar Estudante                            |",
-    "| 4 - Cadastrar Autor                                |",
-    "| 5 - Realizar Emprestimo                            |",
-    "| 6 - Receber Emprestimo                             |",
-    "| 0 - Sair                                           |",
-    "| -------------------------------------------------- |", 
- 
- */
-
 public class InterfaceGeral implements ActionListener{
     JFrame main = new JFrame();
+    JFrame teste = new JFrame();
 
     //Meus painéis
     JPanel p1 = new JPanel();
@@ -47,9 +25,9 @@ public class InterfaceGeral implements ActionListener{
     JPanel painelEmprestimo = new JPanel();
     JPanel painelDevolucao = new JPanel();
     
-    //MInhas etiquetas
+    //Etiquetas p1
     JLabel etiqueta = new JLabel("Escolha a opção desejada:");
-
+    //BOtões p1
     JButton cadastrarLivro = new JButton("CadastrarLivro");
     JButton cadastrarFuncionario = new JButton("Cadastrar Funcionario");
     JButton cadastrarEstudante = new JButton("Cadastrar Estudante");
@@ -117,8 +95,28 @@ public class InterfaceGeral implements ActionListener{
             }
         });
 
+//---------------------------------------//Painel 2\\---------------------------------------//
+/*
+
+    "|                 Escolha um opção:                  |",
+    "| -------------------------------------------------- | ",
+    "| 1 - Cadastrar Livro                                |",
+    "| 2 - Cadastrar Funcionario                          |",
+    "| 3 - Cadastrar Estudante                            |",
+    "| 4 - Cadastrar Autor                                |",
+    "| 5 - Realizar Emprestimo                            |",
+    "| 6 - Receber Emprestimo                             |",
+    "| 0 - Sair                                           |",
+    "| -------------------------------------------------- |", 
+ 
+ */
+
+        painelLivro.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
+        painelLivro.setLayout(new GridLayout(0, 1));
         
-        
+        JTextArea titulo = new JTextArea("Insira o título do Livro");
+
+        painelLivro.add(cadastrarAutor);
 
 //--------------------------------Configuração Da janela--------------------------------//
         main.add(p1, BorderLayout.CENTER);
@@ -132,7 +130,7 @@ public class InterfaceGeral implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        p1.setVisible(false);
+        main.dispose();
         painelLivro.setVisible(true);
     }
 }
