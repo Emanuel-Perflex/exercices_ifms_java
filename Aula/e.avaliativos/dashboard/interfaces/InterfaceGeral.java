@@ -59,35 +59,63 @@ public class InterfaceGeral implements ActionListener{
     JButton sair = new JButton("Sair");
 
     public InterfaceGeral(){
+//---------------------------------------//Painel 1\\---------------------------------------//
         p1.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
         p1.setLayout(new GridLayout(0, 1));
         
-        //Adicionando o minimo de instrução
+        //Adicionando instruções;
         p1.add(etiqueta);
-
-        //livro
+        //Botão cadastrar Livro
         p1.add(cadastrarLivro);
         cadastrarLivro.addActionListener(this);
-
-
-
-
-
-        //Cadastrar Funcionario
+        //Botão cadastrar Funcionario
         p1.add(cadastrarFuncionario);
-        
-
-
-        //Funcionario
+        cadastrarFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                p1.setVisible(false);
+                painelFuncionario.setVisible(true);
+            }
+        });
+        //Botão de cadastrar Estudante
         p1.add(cadastrarEstudante);
-        //Autor
+        cadastrarEstudante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                p1.setVisible(false);
+                painelEstudante.setVisible(true);
+            }
+        });
+        //botão Cadastrar Autor 
         p1.add(cadastrarAutor);
-        //Emprestimo
+        cadastrarAutor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                p1.setVisible(false);
+                painelAutor.setVisible(true);
+            }
+        });
+        //Botão cadastrar Emprestimo
         p1.add(cadastrarEmprestimo);
-        //Receber
+        cadastrarEmprestimo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                p1.setVisible(false);
+                painelEmprestimo.setVisible(true);
+            }
+        });
+        //Botão para devolver livro emprestado
         p1.add(receberEmprestimo);
-        //Sair
+        receberEmprestimo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                p1.setVisible(false);
+                painelDevolucao.setVisible(true);
+            }
+        });
+        //Botão para morrer
         p1.add(sair);
+        sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                System.out.println("\n\n\n|Sistema Encerrado!|");
+                System.exit(0);
+            }
+        });
 
         
         
@@ -104,9 +132,7 @@ public class InterfaceGeral implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("salve");
         p1.setVisible(false);
         painelLivro.setVisible(true);
-
     }
 }
