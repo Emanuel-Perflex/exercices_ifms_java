@@ -7,7 +7,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.Scanner;
-import java.util.logging.Logger;
 
 import javax.swing.text.MaskFormatter;
 
@@ -18,6 +17,7 @@ public class Pessoa {
     private String logradouro;
     private String telefonePrincipal;
     
+    //------------------------------------//Getters e Setters\\-----------------------------//
 
     public String getNome() {
         return this.nome;

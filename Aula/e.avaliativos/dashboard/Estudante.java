@@ -8,6 +8,8 @@ public class Estudante extends Pessoa{
     private LocalDate dtInicio;
     private String ra;
 
+    //------------------------------------//Getters e Setters\\-----------------------------//
+
     public String getra() {
         return this.ra;
     }

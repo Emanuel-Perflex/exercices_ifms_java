@@ -1,8 +1,15 @@
 1. A ideia é fazer um menu de cadastro para uma livraria em que estudantes realizam empréstimo de livros
 
-//----------------------------------Observação-------------------------------------//
-Como nas aulas eu apenas rascunho o que vejo no quadro sendo exibido, para mostrar ao professor que não estou apenas  bancando o espertinho com base nos commits já upados em seu repositório, irei adicionar mais atributos em cada classe com informações pertinentes a herança;
-//--------------------------------------------------------------------------------//
+<div align="center">Observação</div>
+
+##
+
+Algumas Alterações pertinentes foram realizadas: 
+    ●   1 - Para fins de conhecimento, irei adicionar mais atributos em cada classe com informações pertinentes a herança;
+    
+    ●   2 - Todo o código foi feito para se adequar ao JFRAME; 
+
+##
 
 As classes que esse sistema deve possuir e seus respectivos atributos são:
 
@@ -15,5 +22,3 @@ As classes que esse sistema deve possuir e seus respectivos atributos são:
 
 A Hierarquia do projeto é a seguinte: 
 ![Screenshot](screenshot.jpeg)
-
-//----Por motivos óbvios, ignorar marcações no quadro que não correspondam ao conceito de herança----//

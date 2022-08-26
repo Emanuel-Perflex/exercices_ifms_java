@@ -7,6 +7,9 @@ public class Livro extends Autor{
     private String editora;
     private LocalDate dtLancamento;
 
+
+    //------------------------------------//Getters e Setters\\-----------------------------//
+
     public String getTitulo() {
         return this.titulo;
     }

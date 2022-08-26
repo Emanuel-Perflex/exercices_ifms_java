@@ -5,6 +5,8 @@ public class Funcionario extends Pessoa {
     private String dataAdmissao;
     private String cargo;
 
+
+    //------------------------------------//Getters e Setters\\-----------------------------//
     public String getMatricula() {
         return this.matricula;
     }
