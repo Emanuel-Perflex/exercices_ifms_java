@@ -21,10 +21,11 @@ public class InterfaceLivro {
     JTextArea lancamento = new JTextArea();
     JTextArea autor = new JTextArea();
     //Labeis
-    JLabel tituloL = new JLabel("Insira o nome do livro:");
-    JLabel editoraL = new JLabel("Insira o nome da editora:");
-    JLabel lancamentoL = new JLabel("Insira a data de Lançamento:");
-    JLabel autorL = new JLabel("Insira o nome do autor:");
+    JLabel labelTitulo = new JLabel("Insira as informações requisitadas para efetuar o cadastro de um novo funcionário");
+    JLabel tituloL = new JLabel("Nome do livro:");
+    JLabel editoraL = new JLabel("Nome da editora:");
+    JLabel lancamentoL = new JLabel("Data de Lançamento:");
+    JLabel autorL = new JLabel("Nome do autor:");
     //Botões
     JButton cadastrarButton = new JButton("Cadastrar Livro");
     JButton sairButton = new JButton("Sair");
@@ -32,6 +33,9 @@ public class InterfaceLivro {
 
 
     public InterfaceLivro(){
+        //Titulo based
+        painelLivro.add(labelTitulo);
+        //Informações
         painelLivro.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
         painelLivro.setLayout(new GridLayout(0, 1));
         //Titulo
