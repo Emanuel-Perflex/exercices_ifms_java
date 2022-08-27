@@ -9,8 +9,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class InterfaceLivro {
     //JFrame
