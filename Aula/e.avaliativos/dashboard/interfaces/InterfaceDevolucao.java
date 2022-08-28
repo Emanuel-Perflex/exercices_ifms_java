@@ -12,13 +12,14 @@ import java.awt.GridLayout;
 public class InterfaceDevolucao {
     //Jframe main
     JFrame main = new JFrame();
-
+    //Painel
+    JPanel painelDevolucao = new JPanel();
     public InterfaceDevolucao (){
-        painelAutor.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
-        painelAutor.setLayout(new GridLayout(0, 1));
+        painelDevolucao.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
+        painelDevolucao.setLayout(new GridLayout(0, 1));
 
         //--------------------------------Configuração Da janela--------------------------------//
-        main.add(painelAutor, BorderLayout.CENTER);
+        main.add(painelDevolucao, BorderLayout.CENTER);
         main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         main.pack();
         main.setLocationRelativeTo(null); 

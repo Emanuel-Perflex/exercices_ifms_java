@@ -62,8 +62,6 @@ public class InterfaceFuncionario {
         painelFuncionario.add(buttonBack);
         painelFuncionario.add(buttonExit);
 
-
-
         //--------------------------------Configuração Da janela--------------------------------//
         main.add(painelFuncionario, BorderLayout.CENTER);
         main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
