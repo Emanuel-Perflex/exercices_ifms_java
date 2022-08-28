@@ -11,6 +11,14 @@ import javax.swing.JTextArea;
 import dashboard.interfaces.InterfaceGeral;
 
 import java.awt.GridLayout;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+
 
 public class InterfaceDevolucao {
     //Jframe main
@@ -47,8 +55,31 @@ public class InterfaceDevolucao {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
             //Aqui pego o texto inserido
             //String txt = areaAsk.getText();                
+             
+
+            //A ideia é que ele não consiga modificar, apenas efetuar a leitura
+            try {
+                FileInputStream arquivo = new FileInputStream("Aula/e.avaliativos/dashboard/BancodeDados/emprestados.txt");
+                InputStreamReader input = new InputStreamReader(arquivo);
+                BufferedReader br = new BufferedReader(input);
+
+                String line;
+
+                do {
+                    line = br.readLine();
+                    if (line != null){
+                        //Na hora de salvar sempre adicionar um ; no final para o split conseguir tratar
+                        String [] palavras = line.split(";");
+
+                        System.out.println("Lido" + line);
+                    }
+                } while (line != null);
+
+            } catch (Exception e) {
+                System.out.println("Erro");
+            }
+
             
-           
             
            
             

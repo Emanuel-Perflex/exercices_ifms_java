@@ -10,6 +10,8 @@ import javax.swing.JPanel;
 import dashboard.interfaces.InterfaceGeral;
 
 import java.awt.GridLayout;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
 
 public class InterfaceEmprestimo {
 //------------------------------------------//TELA 1\\----------------------------------------------//    
@@ -20,7 +22,6 @@ public class InterfaceEmprestimo {
     //Tela 1 labeis
     JLabel labelDuvida = new JLabel("O que gostaria de fazer?");
     //Botões tela1
-    JButton buttonDevolucao = new JButton("Registrar a devolução de um Livro");
     JButton buttonFuncionario = new JButton("Empréstimo para funcionário");
     JButton buttonEstudante = new JButton("Empréstimo para Estudante");
     //Botões de escape
@@ -32,7 +33,6 @@ public class InterfaceEmprestimo {
         painelEmprestimo.setLayout(new GridLayout(6, 0));
         //Tela 1
         painelEmprestimo.add(labelDuvida);
-        painelEmprestimo.add(buttonDevolucao);
         painelEmprestimo.add(buttonEstudante);
         painelEmprestimo.add(buttonFuncionario);
         //Painel de escape
@@ -40,6 +40,22 @@ public class InterfaceEmprestimo {
         painelEmprestimo.add(buttonExit);
 
 //________________________________________//Funções\\____________________________________________\\
+
+        //Botões de emprestimo
+        // try {
+        //     //O caminho se inicia na raíz do diretório, por isso tava dando tanto trabalho
+        //     FileOutputStream arquivo = new FileOutputStream("Aula/e.avaliativos/dashboard/BancodeDados/arquivo.txt");
+        //     PrintWriter pr = new PrintWriter(arquivo);
+
+        //     pr.println("Salve");
+        //     pr.close();
+        //     arquivo.close();
+                
+            
+        // } catch (Exception e) {
+        //     System.out.println("Erro");
+        // }
+
 
         //Botão Sair
         buttonBack.addActionListener(new java.awt.event.ActionListener() {
