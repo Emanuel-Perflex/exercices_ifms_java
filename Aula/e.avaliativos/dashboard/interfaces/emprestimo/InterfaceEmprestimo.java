@@ -1,4 +1,4 @@
-package dashboard.interfaces;
+package dashboard.interfaces.emprestimo;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -6,7 +6,6 @@ import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 import java.awt.GridLayout;
 
 public class InterfaceEmprestimo {

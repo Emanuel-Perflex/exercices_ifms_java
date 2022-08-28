@@ -1,4 +1,4 @@
-package dashboard.interfaces;
+package dashboard.interfaces.emprestimo;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -14,9 +14,36 @@ public class InterfaceDevolucao {
     JFrame main = new JFrame();
     //Painel
     JPanel painelDevolucao = new JPanel();
+    //JLABEL
+    JLabel labelTitulo = new JLabel("Insira o Título do livro emprestado");    
+    //text
+    JTextArea areaAsk = new JTextArea();
+    //Botões
+    JButton buttonAsk = new JButton("Pesquisar");
+    JButton buttonBack = new JButton("Voltar");
+    JButton exitButton = new JButton("Sair");
+
+
     public InterfaceDevolucao (){
+        //A idéia é que o balconista consiga fazer a devolução do livro somente com o nome do Título
+        //É interessante se no ato de pesquisar o livro emprestado ter um return que fez uma validação dizendo se ele foi devolvido ou não
+
         painelDevolucao.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
         painelDevolucao.setLayout(new GridLayout(0, 1));
+
+        painelDevolucao.add(labelTitulo);
+        painelDevolucao.add(areaAsk);
+        painelDevolucao.add(buttonAsk);
+        //Botões de escape
+        painelDevolucao.add(buttonBack);
+        painelDevolucao.add(exitButton);
+
+
+
+
+
+
+
 
         //--------------------------------Configuração Da janela--------------------------------//
         main.add(painelDevolucao, BorderLayout.CENTER);
