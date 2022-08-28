@@ -42,7 +42,20 @@ public class InterfaceDevolucao {
         painelDevolucao.add(exitButton);
 //________________________________________//Funções\\____________________________________________\\
         
-        //Botão Sair
+        //Botão Pesquisar
+        buttonAsk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            //Aqui pego o texto inserido
+            //String txt = areaAsk.getText();                
+            
+           
+            
+           
+            
+            }
+        });
+
+        //Botão Voltar
         buttonBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 main.dispose();
