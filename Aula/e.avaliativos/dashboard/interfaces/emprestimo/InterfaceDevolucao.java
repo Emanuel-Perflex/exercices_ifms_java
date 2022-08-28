@@ -56,7 +56,6 @@ public class InterfaceDevolucao {
             //Aqui pego o texto inserido
             //String txt = areaAsk.getText();                
              
-
             //A ideia é que ele não consiga modificar, apenas efetuar a leitura
             try {
                 FileInputStream arquivo = new FileInputStream("Aula/e.avaliativos/dashboard/BancodeDados/emprestados.txt");
@@ -64,25 +63,22 @@ public class InterfaceDevolucao {
                 BufferedReader br = new BufferedReader(input);
 
                 String line;
-
+                //Por conta do do while eu conseguir fazer com que mesmo o app aberto, qualquer save sera printado
                 do {
                     line = br.readLine();
                     if (line != null){
                         //Na hora de salvar sempre adicionar um ; no final para o split conseguir tratar
                         String [] palavras = line.split(";");
 
-                        System.out.println("Lido" + line);
+                        for (int i = 0; i < palavras.length; i++) {
+                            System.out.println(palavras[i]);
+                        }
                     }
                 } while (line != null);
 
             } catch (Exception e) {
                 System.out.println("Erro");
-            }
-
-            
-            
-           
-            
+                }
             }
         });
 

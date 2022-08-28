@@ -10,6 +10,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import java.awt.GridLayout;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 
 public class InterfaceEstudante {
     //JFrame
@@ -59,10 +62,34 @@ public class InterfaceEstudante {
         //Botões
         painelEstudante.add(buttonBack);
         painelEstudante.add(buttonSair);
+        painelEstudante.add(buttonCadastro);
 
 //________________________________________//Funções\\____________________________________________\\
-        
-        //Botão Sair
+
+        //Botão para submeter formulário
+        buttonCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                String inputNome = textNome.getText(); 
+                String inputCurso = textCurso.getText();
+
+                // System.out.println(inputNome);
+                
+                try {
+            //O caminho se inicia na raíz do diretório, por isso tava dando tanto trabalho
+            FileOutputStream arquivo = new FileOutputStream("Aula/e.avaliativos/dashboard/BancodeDados/Estudantes.txt");
+            PrintWriter pr = new PrintWriter(arquivo,true);
+            //
+            pr.println(inputNome + ";");
+            pr.close();
+            arquivo.close();
+              
+            } catch (Exception e) {
+                System.out.println("Erro");
+            }
+            }
+        });
+
+        //Botão Voltar
         buttonBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 main.dispose();
