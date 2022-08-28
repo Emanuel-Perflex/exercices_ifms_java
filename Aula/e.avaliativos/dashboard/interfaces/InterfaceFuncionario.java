@@ -62,13 +62,30 @@ public class InterfaceFuncionario {
         painelFuncionario.add(buttonBack);
         painelFuncionario.add(buttonExit);
 
+//________________________________________//Funções\\____________________________________________\\
+        
+        //Botão Sair
+        buttonBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                main.dispose();
+                new InterfaceGeral();
+            }
+        });
+
+        //Botão Sair
+        buttonExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                System.exit(0);
+            }
+        });               
+
         //--------------------------------Configuração Da janela--------------------------------//
         main.add(painelFuncionario, BorderLayout.CENTER);
         main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         main.pack();
         main.setLocationRelativeTo(null); 
         main.setTitle("Cadastro Bibliotecário");
-        main.setSize(500, 600);
+        main.setSize(400, 600);
         main.setVisible(true);    
     }
 }

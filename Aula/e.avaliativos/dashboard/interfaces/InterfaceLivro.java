@@ -56,6 +56,23 @@ public class InterfaceLivro {
         painelLivro.add(sairButton);
         painelLivro.add(backButton);
 
+//________________________________________//Funções\\____________________________________________\\
+        
+        //Botão Voltar
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                main.dispose();
+                new InterfaceGeral();
+            }
+        });
+
+        //Botão Sair
+        sairButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                System.exit(0);
+            }
+        });
+
 
 //--------------------------------Configuração Da janela--------------------------------//
         main.add(painelLivro, BorderLayout.CENTER);
@@ -63,7 +80,7 @@ public class InterfaceLivro {
         main.pack();
         main.setLocationRelativeTo(null); 
         main.setTitle("Cadastro Bibliotecário");
-        main.setSize(800, 600);
+        main.setSize(400, 600);
         main.setVisible(true);
     }
 }

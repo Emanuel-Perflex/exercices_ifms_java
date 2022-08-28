@@ -7,6 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import dashboard.interfaces.emprestimo.InterfaceDevolucao;
+import dashboard.interfaces.emprestimo.InterfaceEmprestimo;
+
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -35,7 +38,6 @@ public class InterfaceGeral implements ActionListener{
         painel.add(etiqueta);
         //Botão cadastrar Livro
         painel.add(cadastrarLivro);
-        cadastrarLivro.addActionListener(this);
         //Botão cadastrar Funcionario
         painel.add(cadastrarFuncionario);
         
@@ -50,29 +52,73 @@ public class InterfaceGeral implements ActionListener{
         
         //Botão para devolver livro emprestado
         painel.add(receberEmprestimo);
-        
-        //Botão para morrer
+        //Botão sair
         painel.add(sair);
-        sair.addActionListener(new java.awt.event.ActionListener() {
+
+        //_________________________________________//Funções\\____________________________________________\\   
+        //Função Cadastrar Livro
+        cadastrarLivro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                System.out.println("\n\n\n|Sistema Encerrado!|");
-                System.exit(0);
+                main.dispose();
+                new InterfaceLivro();
             }
         });
 
+        //Função Cadastrar Funcionario
+        cadastrarFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                main.dispose();
+                new InterfaceFuncionario();
+            }
+        });
 
+        //Função cadastrar estudante
+        cadastrarEstudante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                main.dispose();
+                new InterfaceEstudante();
+            }
+        });
+
+        //Função cadastrar Autor
+        cadastrarAutor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                main.dispose();
+                new InterfaceAutor();
+            }
+        });
+
+        //Função cadastrar Emprestimo
+        cadastrarEmprestimo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                main.dispose();
+                new InterfaceEmprestimo();
+            }
+        });
+
+        //Função cadastrar Receber livro emprestado
+        receberEmprestimo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                main.dispose();
+                new InterfaceDevolucao();
+            }
+        });
+
+        //Função sair
+        sair.addActionListener(this);
+        
 //--------------------------------Configuração Da janela--------------------------------//
         main.add(painel, BorderLayout.CENTER);
         main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         main.pack();
         main.setLocationRelativeTo(null); 
         main.setTitle("Cadastro Bibliotecário");
-        main.setSize(800, 600);
+        main.setSize(300, 400);
         main.setVisible(true);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        main.dispose();
+        System.exit(0);
     }
 }

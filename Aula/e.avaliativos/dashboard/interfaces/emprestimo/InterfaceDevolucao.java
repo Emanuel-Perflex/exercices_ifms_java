@@ -7,6 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+
+import dashboard.interfaces.InterfaceGeral;
+
 import java.awt.GridLayout;
 
 public class InterfaceDevolucao {
@@ -37,7 +40,22 @@ public class InterfaceDevolucao {
         //Botões de escape
         painelDevolucao.add(buttonBack);
         painelDevolucao.add(exitButton);
+//________________________________________//Funções\\____________________________________________\\
+        
+        //Botão Sair
+        buttonBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                main.dispose();
+                new InterfaceGeral();
+            }
+        });
 
+        //Botão Sair
+        exitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                System.exit(0);
+            }
+        });
 
 
 
@@ -51,7 +69,7 @@ public class InterfaceDevolucao {
         main.pack();
         main.setLocationRelativeTo(null); 
         main.setTitle("Cadastro Bibliotecário");
-        main.setSize(500, 300);
+        main.setSize(400, 300);
         main.setVisible(true);        
     }
 

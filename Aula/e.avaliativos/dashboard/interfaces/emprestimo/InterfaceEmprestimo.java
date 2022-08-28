@@ -6,6 +6,9 @@ import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import dashboard.interfaces.InterfaceGeral;
+
 import java.awt.GridLayout;
 
 public class InterfaceEmprestimo {
@@ -36,13 +39,30 @@ public class InterfaceEmprestimo {
         painelEmprestimo.add(buttonBack);
         painelEmprestimo.add(buttonExit);
 
+//________________________________________//Funções\\____________________________________________\\
+
+        //Botão Sair
+        buttonBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                main.dispose();
+                new InterfaceGeral();
+            }
+        });
+        
+        //Botão Sair
+        buttonExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                System.exit(0);
+            }
+        });        
+
     //--------------------------------Configuração Da janela--------------------------------//
         main.add(painelEmprestimo, BorderLayout.CENTER);
         main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         main.pack();
         main.setLocationRelativeTo(null); 
         main.setTitle("Cadastro Bibliotecário");
-        main.setSize(500, 300);
+        main.setSize(400, 300);
         main.setVisible(true);     
     }
 
