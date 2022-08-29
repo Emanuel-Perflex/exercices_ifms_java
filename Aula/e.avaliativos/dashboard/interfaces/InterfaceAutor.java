@@ -9,6 +9,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 import java.awt.GridLayout;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 
 public class InterfaceAutor {
     //JFrame
@@ -16,16 +19,16 @@ public class InterfaceAutor {
     //JPanel principal
     JPanel painelAutor = new JPanel();
     //Botões
-    JButton buttonExit = new JButton("Sair");
-    JButton buttonBack = new JButton("Voltar para o Menu");
-    JButton buttoCadastrar = new JButton("Cadastrar Autor");
+    JButton buttonExit      = new JButton("Sair");
+    JButton buttonBack      = new JButton("Voltar para o Menu");
+    JButton buttoCadastrar  = new JButton("Cadastrar Autor");
     //Labels
-    JLabel labelNome = new JLabel("Insira o nome do autor: ");
-    JLabel labelFaculdade = new JLabel("Insira a formação desse Autor: ");
-    JLabel labelNascimento = new JLabel("Insira a data de Nascimento do Autor: ");
+    JLabel labelNome        = new JLabel("Insira o nome do autor: ");
+    JLabel labelFaculdade   = new JLabel("Insira a formação desse Autor: ");
+    JLabel labelNascimento  = new JLabel("Insira a data de Nascimento do Autor: ");
     //TextAreas
-    JTextArea textNome = new JTextArea();
-    JTextArea textFaculdade = new JTextArea();  
+    JTextArea textNome       = new JTextArea();
+    JTextArea textFaculdade  = new JTextArea();  
     JTextArea textNascimento = new JTextArea();
 
 
@@ -51,6 +54,30 @@ public class InterfaceAutor {
 
 //________________________________________//Funções\\____________________________________________\\
         
+        //Cadastrar Autor
+        buttoCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                String inputNome       = textNome.getText();
+                String inputFaculdade  = textFaculdade.getText();
+                String inputNascimento = textNascimento.getText();
+                
+                String cadastroAutor[] = {inputNome," ", inputFaculdade," ", inputNascimento,";","\n"};
+            
+                try {
+                    for (int i = 0; i < cadastroAutor.length; i++) {
+                        //Printf de nextLine no documento
+                        Files.write(Paths.get("Aula/e.avaliativos/dashboard/BancodeDados/Autor.txt"), cadastroAutor[i].getBytes(), StandardOpenOption.APPEND);    
+                    }
+                
+                }catch (Exception e) {
+                    System.out.println("Erro");
+                }    
+        
+                main.dispose();
+                new InterfaceGeral();     
+            }});
+
+
         //Botão Sair
         buttonBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
