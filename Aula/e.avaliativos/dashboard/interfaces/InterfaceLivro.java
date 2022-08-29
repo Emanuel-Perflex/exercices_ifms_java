@@ -9,6 +9,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 import java.awt.GridLayout;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 
 public class InterfaceLivro {
     //JFrame
@@ -57,7 +60,32 @@ public class InterfaceLivro {
         painelLivro.add(backButton);
 
 //________________________________________//Funções\\____________________________________________\\
+
+        //Cadastrar Autor
+        cadastrarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                String inputTitulo       = titulo.getText();
+                String inputEditora      = editora.getText();
+                String inputLancamento   = lancamento.getText();
+                String inputAutor        = autor.getText();
+                
+                String cadastroLivro[] = {inputTitulo," ", inputEditora," ", inputLancamento, " ",inputAutor,";","\n"};
+
+                try {
+                    for (int i = 0; i < cadastroLivro.length; i++) {
+                        //Printf de nextLine no documento
+                        Files.write(Paths.get("Aula/e.avaliativos/dashboard/BancodeDados/Livros.txt"), cadastroLivro[i].getBytes(), StandardOpenOption.APPEND);    
+                    }
+                
+                }catch (Exception e) {
+                    System.out.println("Erro");
+                }    
         
+                main.dispose();
+                new InterfaceGeral();     
+            }});
+
+
         //Botão Voltar
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
