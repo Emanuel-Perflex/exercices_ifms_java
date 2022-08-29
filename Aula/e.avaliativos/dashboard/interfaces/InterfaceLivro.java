@@ -69,7 +69,7 @@ public class InterfaceLivro {
                 String inputLancamento   = lancamento.getText();
                 String inputAutor        = autor.getText();
                 
-                String cadastroLivro[] = {inputTitulo," ", inputEditora," ", inputLancamento, " ",inputAutor,";","\n"};
+                String cadastroLivro[] = {inputTitulo, "-"," ", inputEditora," ", inputLancamento, " ",inputAutor,";","\n"};
 
                 try {
                     for (int i = 0; i < cadastroLivro.length; i++) {

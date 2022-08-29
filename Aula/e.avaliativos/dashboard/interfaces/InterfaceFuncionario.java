@@ -9,6 +9,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 import java.awt.GridLayout;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 
 public class InterfaceFuncionario {
     //JFrame
@@ -26,7 +29,7 @@ public class InterfaceFuncionario {
     JTextArea textNome = new JTextArea();
     JTextArea textCurso = new JTextArea();
     JTextArea textCargo = new JTextArea();
-    JTextArea textDataAdimissao = new JTextArea();
+    JTextArea textDataAdmissao = new JTextArea();
     JTextArea textSetor = new JTextArea();
     //Botões pertinentes
     JButton buttonCadastrar = new JButton("Cadastrar Funcionário");
@@ -52,7 +55,7 @@ public class InterfaceFuncionario {
         painelFuncionario.add(textCargo);
         //Data de admissão
         painelFuncionario.add(labelDataAdimissao);
-        painelFuncionario.add(textDataAdimissao);
+        painelFuncionario.add(textDataAdmissao);
         //Setor
         painelFuncionario.add(labelSetor);
         painelFuncionario.add(textSetor);
@@ -64,6 +67,38 @@ public class InterfaceFuncionario {
 
 //________________________________________//Funções\\____________________________________________\\
         
+        //Cadastrar Funcionário
+        buttonCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+                // JTextArea textNome = new JTextArea();
+                // JTextArea textCurso = new JTextArea();
+                // JTextArea textCargo = new JTextArea();
+                // JTextArea textDataAdimissao = new JTextArea();
+                // JTextArea textSetor = new JTextArea();
+
+                String inputNome  = textNome.getText();
+                String inputCurso = textCurso.getText();
+                String inputCargo = textCargo.getText();
+                String inputData  = textDataAdmissao.getText();
+                String inputSetor = textSetor.getText();
+                
+                String cadastroFuncionario[] = {inputNome," ", inputCurso," ", inputCargo, " ", inputData, " ", inputSetor,";","\n"};
+
+                try {
+                    for (int i = 0; i < cadastroFuncionario.length; i++) {
+                        //Printf de nextLine no documento
+                        Files.write(Paths.get("Aula/e.avaliativos/dashboard/BancodeDados/Funcionarios.txt"), cadastroFuncionario[i].getBytes(), StandardOpenOption.APPEND);    
+                    }
+                
+                }catch (Exception e) {
+                    System.out.println("Erro");
+                }    
+        
+                main.dispose();
+                new InterfaceGeral();     
+            }});
+
         //Botão Sair
         buttonBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
