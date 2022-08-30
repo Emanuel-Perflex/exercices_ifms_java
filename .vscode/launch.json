@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Machine",
+            "request": "launch",
+            "mainClass": "robo.Machine",
+            "projectName": "exercices_ifms_java_9328dec1"
+        },
+        {
+            "type": "java",
             "name": "Launch SistemaCadastro",
             "request": "launch",
             "mainClass": "dashboard.SistemaCadastro",

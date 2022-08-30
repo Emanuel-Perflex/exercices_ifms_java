@@ -59,7 +59,7 @@ import java.awt.event.ActionListener;
             painel.add(direita);
             direita.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    x--;
+                    x++;
                     etiquetaMain.setText("As coordenadas atuais são: (" + x + "," + y + ")");
                 }
             });
