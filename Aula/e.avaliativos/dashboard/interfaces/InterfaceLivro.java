@@ -71,6 +71,7 @@ public class InterfaceLivro {
                 
                 String cadastroLivro[] = {inputTitulo, "-"," ", inputEditora," ", inputLancamento, " ",inputAutor,";","\n"};
 
+                //Gravar palavras
                 try {
                     for (int i = 0; i < cadastroLivro.length; i++) {
                         //Printf de nextLine no documento
@@ -80,11 +81,12 @@ public class InterfaceLivro {
                 }catch (Exception e) {
                     System.out.println("Erro");
                 }    
-        
+
+                //Tratamento de dados
+                
                 main.dispose();
                 new InterfaceGeral();     
             }});
-
 
         //Botão Voltar
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -100,7 +102,6 @@ public class InterfaceLivro {
                 System.exit(0);
             }
         });
-
 
 //--------------------------------Configuração Da janela--------------------------------//
         main.add(painelLivro, BorderLayout.CENTER);

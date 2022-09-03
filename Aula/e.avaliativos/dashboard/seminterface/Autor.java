@@ -1,4 +1,4 @@
-package dashboard;
+package dashboard.seminterface;
 
 public class Autor extends Pessoa {
     private String formacao;

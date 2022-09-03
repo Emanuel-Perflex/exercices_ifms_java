@@ -1,4 +1,4 @@
-package dashboard;
+package dashboard.seminterface;
 
 public class Funcionario extends Pessoa {
     private String matricula;
