@@ -2,8 +2,6 @@ package dashboard.interfaces;
 
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
-import java.util.concurrent.CountDownLatch;
-
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import java.awt.BorderLayout;
