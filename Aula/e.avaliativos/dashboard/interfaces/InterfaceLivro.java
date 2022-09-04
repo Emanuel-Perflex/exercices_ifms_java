@@ -1,17 +1,24 @@
 package dashboard.interfaces;
 
+import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 import java.awt.GridLayout;
+//Tutorial Carlos Henrique
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
+
+
 
 public class InterfaceLivro {
     //JFrame
@@ -33,7 +40,7 @@ public class InterfaceLivro {
     JButton cadastrarButton = new JButton("Cadastrar Livro");
     JButton sairButton = new JButton("Sair");
     JButton backButton = new JButton("Voltar ao menu");
-
+    JButton buttonViewBooks = new JButton("Ver livros cadastrados");
 
     public InterfaceLivro(){
         //Titulo based
@@ -56,37 +63,69 @@ public class InterfaceLivro {
 
         //Botões
         painelLivro.add(cadastrarButton);
+        painelLivro.add(buttonViewBooks);
         painelLivro.add(sairButton);
         painelLivro.add(backButton);
-
+        
 //________________________________________//Funções\\____________________________________________\\
 
-        //Cadastrar Autor
         cadastrarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                String inputTitulo       = titulo.getText();
-                String inputEditora      = editora.getText();
-                String inputLancamento   = lancamento.getText();
-                String inputAutor        = autor.getText();
-                
-                String cadastroLivro[] = {inputTitulo, "-"," ", inputEditora," ", inputLancamento, " ",inputAutor,";","\n"};
+            //Cadastrar Livro\\
 
-                //Gravar palavras
+                String inputTitulo     = titulo.getText();
+                String inputEditora    = editora.getText();
+                String inputLancamento = lancamento.getText();
+                String inputAutor      = autor.getText();
+                //A ideia é que o '-' Gere novas strings mais para frente
+                String cadastroLivro[] = {inputTitulo, " -"," ", inputEditora," ", inputLancamento, " ",inputAutor,"; -","\n"};
+
+                //Cadastro de livros
                 try {
                     for (int i = 0; i < cadastroLivro.length; i++) {
                         //Printf de nextLine no documento
-                        Files.write(Paths.get("Aula/e.avaliativos/dashboard/BancodeDados/Livros.txt"), cadastroLivro[i].getBytes(), StandardOpenOption.APPEND);    
+                        Files.write(Paths.get("Aula/e.avaliativos/dashboard/BancodeDados/Livros.txt"), cadastroLivro[i].getBytes(), StandardOpenOption.APPEND);
                     }
-                
+
                 }catch (Exception e) {
                     System.out.println("Erro");
                 }    
 
-                //Tratamento de dados
-                
                 main.dispose();
                 new InterfaceGeral();     
             }});
+
+        buttonViewBooks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                //Impressão de Livros\\
+                //Declarando um caminho
+                Path caminho = Paths.get("Aula/e.avaliativos/dashboard/BancodeDados/Livros.txt");
+                
+                try {
+                    //Leitura de todos os bytes do arquivo
+                    byte[] textoString = Files.readAllBytes(caminho);
+                    //Transformando os bytes em String
+                    String lerString = new String(textoString);
+                    //String onde salvei o bruto separado pelo '-'
+                    String[] nomes = lerString.split("-");
+                    //Será necessário ou arraylist, já que não limites para o cadastro de novos livros
+                    ArrayList<String> tituloLivros = new ArrayList<String>();
+                    
+                    //Laço com a função de salvar os nomes dos títulos
+                    for (int i = 0; i < nomes.length; i++) {
+                        //Lógica para pegar somente os títulos, todos os títulos são pares na posição do vetor
+                        if (i % 2 == 0) {
+                            tituloLivros.add(nomes[i]);
+                        }
+                    }
+                    //Imprimindo o arraylist
+                    JOptionPane.showMessageDialog(null, tituloLivros);
+      
+                } catch (Exception e) {
+                    System.out.println("Erro");
+                }
+        }});
+
 
         //Botão Voltar
         backButton.addActionListener(new java.awt.event.ActionListener() {
