@@ -92,12 +92,17 @@ public class InterfaceLivro {
                         String[] nomes = lerString.split("-");
                         ArrayList<String> tituloLivros = new ArrayList<String>();
                         
-                        //Salvando os títulos
-                        for (int i = 0; i < nomes.length; i++) {
-                            if (i % 2 == 0) {
-                                tituloLivros.add(nomes[i]);
+
+                        if (inputTitulo.equals("") || inputAutor.equals("") || inputEditora.equals("") || inputLancamento.equals("")) {
+                            JOptionPane.showMessageDialog(null, "Faltam informações"); 
+                        } else {
+                            //Salvando os títulos
+                            for (int i = 0; i < nomes.length; i++) {
+                                if (nomes[i].equals("")) {
+                                    //
+                                } else {
+                                    tituloLivros.add(nomes[i]);
                             }
-                        System.out.println(nomes[i]);
                         }
                         
                         //Primeira camada de validação
@@ -106,9 +111,7 @@ public class InterfaceLivro {
                                 contador++;
                             }
                         }
-
-                        //Erro descoberto, não pode haver linhas vazias no documento
-                        //for (int i = 0; i < tituloLivros.size(); i++) {
+                        //
                         if (contador > 0){
                             JOptionPane.showMessageDialog(null, "Livro já cadastrado, não é possível cadastrá-lo novamente"); 
                         } else {
@@ -118,8 +121,9 @@ public class InterfaceLivro {
                                 Files.write(Paths.get("e.avaliativos/dashboard/BancodeDados/Livros.txt"), cadastroLivro[j].getBytes(), StandardOpenOption.APPEND);
                             }
                         }
-                        tituloLivros.clear();        
-                    //}                 
+                        tituloLivros.clear();       
+                        }
+        
                 }catch (Exception e) {
                     System.out.println("Erro");
                 }
