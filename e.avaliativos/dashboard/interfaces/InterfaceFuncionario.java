@@ -88,7 +88,7 @@ public class InterfaceFuncionario {
                 try {
                     for (int i = 0; i < cadastroFuncionario.length; i++) {
                         //Printf de nextLine no documento
-                        Files.write(Paths.get("Aula/e.avaliativos/dashboard/BancodeDados/Funcionarios.txt"), cadastroFuncionario[i].getBytes(), StandardOpenOption.APPEND);    
+                        Files.write(Paths.get("e.avaliativos/dashboard/BancodeDados/Funcionarios.txt"), cadastroFuncionario[i].getBytes(), StandardOpenOption.APPEND);    
                     }
                 
                 }catch (Exception e) {

@@ -55,7 +55,7 @@ public class InterfaceEmprestimo {
         buttonEmprestimo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 try {
-                    FileInputStream arquivo = new FileInputStream("Aula/e.avaliativos/dashboard/BancodeDados/emprestados.txt");
+                    FileInputStream arquivo = new FileInputStream("e.avaliativos/dashboard/BancodeDados/emprestados.txt");
                     InputStreamReader input = new InputStreamReader(arquivo);
                     BufferedReader br = new BufferedReader(input);
 

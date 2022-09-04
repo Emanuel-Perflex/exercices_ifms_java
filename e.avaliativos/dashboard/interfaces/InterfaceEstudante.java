@@ -73,7 +73,7 @@ public class InterfaceEstudante {
 
             //Leitura
             try {
-                FileInputStream arquivo = new FileInputStream("Aula/e.avaliativos/dashboard/BancodeDados/Estudantes.txt");
+                FileInputStream arquivo = new FileInputStream("e.avaliativos/dashboard/BancodeDados/Estudantes.txt");
                 InputStreamReader input = new InputStreamReader(arquivo);
                 BufferedReader br = new BufferedReader(input);
 

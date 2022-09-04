@@ -58,7 +58,7 @@ public class InterfaceDevolucao {
              
             //A ideia é que ele não consiga modificar, apenas efetuar a leitura
             try {
-                FileInputStream arquivo = new FileInputStream("Aula/e.avaliativos/dashboard/BancodeDados/emprestados.txt");
+                FileInputStream arquivo = new FileInputStream("e.avaliativos/dashboard/BancodeDados/emprestados.txt");
                 InputStreamReader input = new InputStreamReader(arquivo);
                 BufferedReader br = new BufferedReader(input);
 
@@ -96,12 +96,6 @@ public class InterfaceDevolucao {
                 System.exit(0);
             }
         });
-
-
-
-
-
-
 
         //--------------------------------Configuração Da janela--------------------------------//
         main.add(painelDevolucao, BorderLayout.CENTER);

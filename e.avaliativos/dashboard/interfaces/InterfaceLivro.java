@@ -2,6 +2,7 @@ package dashboard.interfaces;
 
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.concurrent.CountDownLatch;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -77,48 +78,61 @@ public class InterfaceLivro {
                 String inputLancamento = lancamento.getText();
                 String inputAutor      = autor.getText();
                 //A ideia é que o '-' Gere novas strings mais para frente
-                String cadastroLivro[] = {inputTitulo, "-"," ", inputEditora," ", inputLancamento, " ",inputAutor,"; -","\n"};
+                String cadastroLivro[] = {inputTitulo, "-"," ", inputEditora," ", inputLancamento, " ",inputAutor,"; -"};
+                int contador;
+                contador = 0;
+
                 //Cadastro de livros
                 try {
                         //Validação de dados
                         //Isto é, não será possível cadastrar um livro já cadastrado
-                        Path caminho = Paths.get("Aula/e.avaliativos/dashboard/BancodeDados/Livros.txt");
+                        Path caminho = Paths.get("e.avaliativos/dashboard/BancodeDados/Livros.txt");
                         byte[] textoString = Files.readAllBytes(caminho);
                         String lerString = new String(textoString);
                         String[] nomes = lerString.split("-");
                         ArrayList<String> tituloLivros = new ArrayList<String>();
+                        
                         //Salvando os títulos
                         for (int i = 0; i < nomes.length; i++) {
                             if (i % 2 == 0) {
                                 tituloLivros.add(nomes[i]);
                             }
+                        System.out.println(nomes[i]);
                         }
-                        //Erro descoberto, não pode haver linhas vazias no documento
+                        
+                        //Primeira camada de validação
                         for (int i = 0; i < tituloLivros.size(); i++) {
-                            if (inputTitulo.equals(tituloLivros.get(i))){
-                                JOptionPane.showMessageDialog(null, "Livro já cadastrado, não será possível cadastrá-lo novamente");
-                            }else{
-                                //gravar dados inseridos no arquivo
-                                for (int j = 0; j < cadastroLivro.length; j++) {
-                                //Printf do array no documento
-                                Files.write(Paths.get("Aula/e.avaliativos/dashboard/BancodeDados/Livros.txt"), cadastroLivro[j].getBytes(), StandardOpenOption.APPEND);
-                                }
+                            if (cadastroLivro[0].equals(tituloLivros.get(i))){
+                                contador++;
                             }
-                        }                 
+                        }
 
+                        //Erro descoberto, não pode haver linhas vazias no documento
+                        //for (int i = 0; i < tituloLivros.size(); i++) {
+                        if (contador > 0){
+                            JOptionPane.showMessageDialog(null, "Livro já cadastrado, não é possível cadastrá-lo novamente"); 
+                        } else {
+                            //gravar dados inseridos no arquivo
+                            for (int j = 0; j < cadastroLivro.length; j++) {
+                                //Printf do array no documento
+                                Files.write(Paths.get("e.avaliativos/dashboard/BancodeDados/Livros.txt"), cadastroLivro[j].getBytes(), StandardOpenOption.APPEND);
+                            }
+                        }
+                        tituloLivros.clear();        
+                    //}                 
                 }catch (Exception e) {
                     System.out.println("Erro");
-                }    
-
+                }
+                    
                 main.dispose();
-                new InterfaceGeral();     
+                new InterfaceLivro();     
             }});
 
         buttonViewBooks.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 //Impressão de Livros\\
                 //Declarando um caminho
-                Path caminho = Paths.get("Aula/e.avaliativos/dashboard/BancodeDados/Livros.txt");
+                Path caminho = Paths.get("e.avaliativos/dashboard/BancodeDados/Livros.txt");
                 
                 try {
                     //Leitura de todos os bytes do arquivo

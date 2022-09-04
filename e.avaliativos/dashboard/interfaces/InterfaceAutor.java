@@ -66,7 +66,7 @@ public class InterfaceAutor {
                 try {
                     for (int i = 0; i < cadastroAutor.length; i++) {
                         //Printf de nextLine no documento
-                        Files.write(Paths.get("Aula/e.avaliativos/dashboard/BancodeDados/Autor.txt"), cadastroAutor[i].getBytes(), StandardOpenOption.APPEND);    
+                        Files.write(Paths.get("e.avaliativos/dashboard/BancodeDados/Autor.txt"), cadastroAutor[i].getBytes(), StandardOpenOption.APPEND);    
                     }
                 
                 }catch (Exception e) {
