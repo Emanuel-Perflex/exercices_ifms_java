@@ -1,34 +1,44 @@
-package poo.heranca.aula2;
+package heranca.aula2;
 
 import java.time.LocalDate;
 
-public class Estudante {
-    private String RA;
+public class Estudante extends Pessoa{
+    private boolean devedor;
     private String curso;
-    private LocalDate hInicio;
+    private LocalDate dtInicio;
+    private String ra;
 
+    //------------------------------------//Getters e Setters\\-----------------------------//
+
+    public String getra() {
+        return this.ra;
+    }
+
+    public void seraA(String ra) {
+        this.ra = ra;
+    }
+
+    public boolean isDevedor() {
+        return this.devedor;
+    }
+
+    public void setDevedor(boolean devedor) {
+        this.devedor = devedor;
+    }
 
     public String getCurso() {
-        return curso;
-    }
-
-    public String getRA() {
-        return RA;
-    }
-
-    public LocalDate gethInicio() {
-        return hInicio;
+        return this.curso;
     }
 
     public void setCurso(String curso) {
         this.curso = curso;
     }
 
-    public void setRA(String rA) {
-        RA = rA;
+    public LocalDate getDtInicio() {
+        return this.dtInicio;
     }
 
-    public void sethInicio(LocalDate hInicio) {
-        this.hInicio = hInicio;
+    public void setDtInicio(LocalDate dtInicio) {
+        this.dtInicio = dtInicio;
     }
 }

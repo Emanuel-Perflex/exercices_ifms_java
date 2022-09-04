@@ -1,23 +1,24 @@
-package poo.heranca.aula2;
+package heranca.aula2;
 
-public class Autor {
-    private String editora;
+public class Autor extends Pessoa {
+    private String formacao;
     private int qtdLivros;
 
-    public String getEditora() {
-        return editora;
-    }
-    
-    public int getQtdLivros() {
-        return qtdLivros;
+
+    //------------------------------------//Getters e Setters\\-----------------------------//
+    public String getFormacao() {
+        return this.formacao;
     }
 
-    public void setEditora(String editora) {
-        this.editora = editora;
+    public void setFormacao(String formacao) {
+        this.formacao = formacao;
+    }
+
+    public int getQtdLivros() {
+        return this.qtdLivros;
     }
 
     public void setQtdLivros(int qtdLivros) {
         this.qtdLivros = qtdLivros;
     }
-    
 }

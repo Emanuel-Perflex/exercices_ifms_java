@@ -1,4 +1,4 @@
-package poo.heranca.aula1;
+package heranca.aula1;
 
 public class App {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package poo.heranca.aula2;
+package heranca.aula2;
 
 import java.time.LocalDate;
 

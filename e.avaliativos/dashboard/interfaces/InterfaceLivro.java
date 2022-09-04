@@ -93,7 +93,7 @@ public class InterfaceLivro {
                                 tituloLivros.add(nomes[i]);
                             }
                         }
-
+                        //Erro descoberto, não pode haver linhas vazias no documento
                         for (int i = 0; i < tituloLivros.size(); i++) {
                             if (inputTitulo.equals(tituloLivros.get(i))){
                                 JOptionPane.showMessageDialog(null, "Livro já cadastrado, não será possível cadastrá-lo novamente");

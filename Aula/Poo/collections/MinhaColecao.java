@@ -1,4 +1,4 @@
-package Aula.poo.collections;
+package collections;
 
 public class MinhaColecao {
     public static void main(String[] args) {

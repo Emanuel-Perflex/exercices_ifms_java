@@ -1,34 +1,37 @@
-package poo.heranca.aula2;
+package heranca.aula2;
 
 import java.time.LocalDate;
 
 public class Livro {
     private String titulo;
-    private String editor;
-    private LocalDate dataLancamento;
+    private String editora;
+    private LocalDate dtLancamento;
 
-    public LocalDate getDataLancamento() {
-        return dataLancamento;
-    }
 
-    public String getEditor() {
-        return editor;
-    }
+  //-----------------------------------//Getters e Setters\\------------------------------//
 
     public String getTitulo() {
-        return titulo;
-    }
-
-    public void setDataLancamento(LocalDate dataLancamento) {
-        this.dataLancamento = dataLancamento;
-    }
-
-    public void setEditor(String editor) {
-        this.editor = editor;
+        return this.titulo;
     }
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+
+    public String getEditora() {
+        return this.editora;
+    }
+
+    public void setEditora(String editora) {
+        this.editora = editora;
+    }
+
+    public LocalDate getDtLancamento() {
+        return this.dtLancamento;
+    }
+
+    public void setDtLancamento(LocalDate dtLancamento) {
+        this.dtLancamento = dtLancamento;
     }
 
 }
