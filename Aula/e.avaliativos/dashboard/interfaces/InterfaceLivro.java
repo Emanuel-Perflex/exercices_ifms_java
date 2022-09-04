@@ -72,20 +72,39 @@ public class InterfaceLivro {
         cadastrarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
             //Cadastrar Livro\\
-
                 String inputTitulo     = titulo.getText();
                 String inputEditora    = editora.getText();
                 String inputLancamento = lancamento.getText();
                 String inputAutor      = autor.getText();
                 //A ideia é que o '-' Gere novas strings mais para frente
-                String cadastroLivro[] = {inputTitulo, " -"," ", inputEditora," ", inputLancamento, " ",inputAutor,"; -","\n"};
-
+                String cadastroLivro[] = {inputTitulo, "-"," ", inputEditora," ", inputLancamento, " ",inputAutor,"; -","\n"};
                 //Cadastro de livros
                 try {
-                    for (int i = 0; i < cadastroLivro.length; i++) {
-                        //Printf de nextLine no documento
-                        Files.write(Paths.get("Aula/e.avaliativos/dashboard/BancodeDados/Livros.txt"), cadastroLivro[i].getBytes(), StandardOpenOption.APPEND);
-                    }
+                        //Validação de dados
+                        //Isto é, não será possível cadastrar um livro já cadastrado
+                        Path caminho = Paths.get("Aula/e.avaliativos/dashboard/BancodeDados/Livros.txt");
+                        byte[] textoString = Files.readAllBytes(caminho);
+                        String lerString = new String(textoString);
+                        String[] nomes = lerString.split("-");
+                        ArrayList<String> tituloLivros = new ArrayList<String>();
+                        //Salvando os títulos
+                        for (int i = 0; i < nomes.length; i++) {
+                            if (i % 2 == 0) {
+                                tituloLivros.add(nomes[i]);
+                            }
+                        }
+
+                        for (int i = 0; i < tituloLivros.size(); i++) {
+                            if (inputTitulo.equals(tituloLivros.get(i))){
+                                JOptionPane.showMessageDialog(null, "Livro já cadastrado, não será possível cadastrá-lo novamente");
+                            }else{
+                                //gravar dados inseridos no arquivo
+                                for (int j = 0; j < cadastroLivro.length; j++) {
+                                //Printf do array no documento
+                                Files.write(Paths.get("Aula/e.avaliativos/dashboard/BancodeDados/Livros.txt"), cadastroLivro[j].getBytes(), StandardOpenOption.APPEND);
+                                }
+                            }
+                        }                 
 
                 }catch (Exception e) {
                     System.out.println("Erro");
