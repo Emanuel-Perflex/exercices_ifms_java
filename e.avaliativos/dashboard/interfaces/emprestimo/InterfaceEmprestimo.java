@@ -9,6 +9,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import dashboard.interfaces.InterfaceGeral;
+import heranca.aula2.Emprestimo;
+
 import java.awt.GridLayout;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -60,7 +62,7 @@ public class InterfaceEmprestimo {
                 String inputNome  = areaNome.getText();
                 String inputLivro = areaLivro.getText();
               
-                String cadastroEmprestimo[] = {inputNome, "-"," ", inputLivro," ","; -"};
+                String cadastroEmprestimo[] = {inputNome, "-", inputLivro,"-"};
 
                 if (inputLivro.equals("") || inputNome.equals("")) {
                     JOptionPane.showMessageDialog(null, "Faltam informações"); 
@@ -78,29 +80,49 @@ public class InterfaceEmprestimo {
                         //Lembrando que o objetivo é jogar pra nível de compilador
                         for (int i = 0; i < nomes.length; i++) {
                             if(i % 2 == 0){
-                                Emprestados.add(cadastroEmprestimo[i]);
+                                Emprestados.add(nomes[i]);
                             } else {
-                                Livros.add(cadastroEmprestimo[i]);
+                                Livros.add(nomes[i]);
+                            }
+                        }
+                        
+                        for (String i : Emprestados){
+                            System.out.println(i);
+                        }
+
+                        for (String i : Livros){
+                            System.out.println(i);
+                        }
+
+                        //Verificando se o livro já foi emprestado antes;
+                        int aux = 0;
+                        for (int i = 0; i < Livros.size(); i++){
+                            if (inputLivro.equals(Livros.get(i))) {
+                                aux ++;
                             }
                         }
     
-    
-    
-                        for (int j = 0; j < cadastroEmprestimo.length; j++) {
+                        if (aux > 0) {
+                            JOptionPane.showMessageDialog(null, "Livro já cadastrado antes");  
+                        } else {
+                            //Aqui gravo o nome dos livros e pra quem foi emprestado
+                            for (int j = 0; j < cadastroEmprestimo.length; j++) {
                             //Printf do array no documento
                             Files.write(Paths.get("e.avaliativos/dashboard/BancodeDados/emprestados.txt"), cadastroEmprestimo[j].getBytes(), StandardOpenOption.APPEND);
+                            }
+                            
                         }
+
                         Emprestados.clear();
                         Livros.clear();
-        
                     }catch (Exception e) {
                         System.out.println("Erro");
                     }
                 }
-
+                
                 //Fazer uma validação no Aluno e no estudante
-            main.dispose();
-            new InterfaceEmprestimo();  
+                main.dispose();
+                new InterfaceEmprestimo();  
         }});
 
         //Botão Sair
