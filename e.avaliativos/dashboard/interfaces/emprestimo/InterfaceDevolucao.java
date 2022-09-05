@@ -120,10 +120,16 @@ public class InterfaceDevolucao {
 
                         //Aqui estou gravando os livros novamente com o nome e o livro devolvido retirado
                         for (int i = 0; i < livrosDevolvidos.size(); i++) {
-
                             Files.write(Paths.get("e.avaliativos/dashboard/BancodeDados/emprestados.txt"), livrosDevolvidos.get(i).getBytes(), StandardOpenOption.APPEND);
                         }
                         livrosDevolvidos.clear();
+                        JOptionPane.showMessageDialog(null, "Livro Devolvido");
+                        main.dispose();
+                        new InterfaceGeral();  
+                    } else {
+                        JOptionPane.showMessageDialog(null, "O livro inserido não foi emprestado");
+                        main.dispose();
+                        new InterfaceDevolucao();  
                     }
 
                     Emprestados.clear();

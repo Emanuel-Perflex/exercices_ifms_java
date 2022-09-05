@@ -1,3 +1,7 @@
+Aluno: Emanuel Barbosa;
+Curso: TADS;
+Instituição: IFMS - Três Lagoas;
+
 # exercices_ifms_java
 ➡ Nesse repositório vou upar conforme o avanço do curso superior, minha experiência com a linguagem Java no mesmo.
 
