@@ -85,25 +85,26 @@ public class InterfaceEmprestimo {
                                 Livros.add(nomes[i]);
                             }
                         }
-                        
-                        for (String i : Emprestados){
-                            System.out.println(i);
-                        }
-
-                        for (String i : Livros){
-                            System.out.println(i);
-                        }
 
                         //Verificando se o livro já foi emprestado antes;
+                        //Auxiliares usados para a validação
                         int aux = 0;
+                        int aux2 = 0;
+
                         for (int i = 0; i < Livros.size(); i++){
                             if (inputLivro.equals(Livros.get(i))) {
                                 aux ++;
+                            }
+                            //Limite de livros emprestados para a mesma pessoa
+                            if (inputNome.equals(Emprestados.get(i))) {
+                                aux2++;
                             }
                         }
     
                         if (aux > 0) {
                             JOptionPane.showMessageDialog(null, "Livro já cadastrado antes");  
+                        } else if (aux2 > 2){ //Não será possível pegar mais do que 3 livros emprestados                            
+                            JOptionPane.showMessageDialog(null, "Estudante ou Funcionário com livros demais emprestados, realize a devolução de algum para efetuar o empréstimo");
                         } else {
                             //Aqui gravo o nome dos livros e pra quem foi emprestado
                             for (int j = 0; j < cadastroEmprestimo.length; j++) {
@@ -175,3 +176,12 @@ public class InterfaceEmprestimo {
     //         System.out.println("Erro");
     //     }
     // }
+
+
+    // for (String i : Emprestados){
+                        //     System.out.println(i);
+                        // }
+
+                        // for (String i : Livros){
+                        //     System.out.println(i);
+                        // }
