@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Aulaum",
+            "request": "launch",
+            "mainClass": "Aulaum",
+            "projectName": "exercices_ifms_java_9328dec1"
+        },
+        {
+            "type": "java",
+            "name": "Launch SistemaCadastro",
+            "request": "launch",
+            "mainClass": "dashboard.SistemaCadastro",
+            "projectName": "exercices_ifms_java_9328dec1"
+        },
+        {
+            "type": "java",
             "name": "Launch Machine",
             "request": "launch",
             "mainClass": "robo.Machine",

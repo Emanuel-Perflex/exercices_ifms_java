@@ -15,3 +15,7 @@
     - Beto fez o sistema todo em aula
     - Estudar split
     - Estudar como converter um tipo para outro (Método parse)
+
+
+-> 05/09
+    - Para a próxima semana trazer uma lista ordenada que adiciona itens no meio
