@@ -1,3 +1,7 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "java.project.sourcePaths": [
+        "Aula/Lp/src/Listas lineares",
+        "e.avaliativos/dashboard"
+    ]
 }

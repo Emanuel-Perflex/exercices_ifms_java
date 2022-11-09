@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch SistemaCadastro",
+            "request": "launch",
+            "mainClass": "SistemaCadastro",
+            "projectName": "exercices_ifms_java_9328dec1"
+        },
+        {
+            "type": "java",
             "name": "Launch Aulaum",
             "request": "launch",
             "mainClass": "Aulaum",

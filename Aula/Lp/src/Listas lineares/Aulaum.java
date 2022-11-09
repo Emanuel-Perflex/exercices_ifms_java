@@ -2,7 +2,8 @@ public class Aulaum {
 
     public static class Lista {
         public No inicio;
-        public int tam;        
+        public int tam;      
+        public No fim;  
     }
     //classe interna ou inter Class
     public static class No {
