@@ -6,6 +6,7 @@ public class Elemento<TIPO> {
     private Elemento<TIPO> esquerda;
     private Elemento<TIPO> direita;
     
+    //Setando valores, visto em aula
     public Elemento(TIPO novoValor){
         this.valor = novoValor;
         this.esquerda = null;
@@ -35,6 +36,4 @@ public class Elemento<TIPO> {
     public void setDireita(Elemento<TIPO> direita) {
         this.direita = direita;
     }
-    
-    
 }

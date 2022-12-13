@@ -9,8 +9,11 @@ public class Arvore<TIPO extends Comparable> {
         this.raiz = null;
     }
 //------------------------------------------\\Adicionar//---------------------------------------\\
-    public void adicionar(TIPO valor){
+//Por hora todo dado inserido está sendo armazenado na memória e também no database
+//Porém quando a operação acaba, a memória se finda e se mantém no banco
+    public void adicionar(TIPO valor){    
         Elemento<TIPO> novoElemento = new Elemento<TIPO>(valor);
+
         if (raiz == null){
             this.raiz = novoElemento;
         }else{
