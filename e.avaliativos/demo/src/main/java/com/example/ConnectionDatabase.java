@@ -122,34 +122,30 @@ public class ConnectionDatabase {
         } catch (Exception e) {
             System.out.println(e);
         }
-
     }
 
+
+//---------------------------------------------------//Pesquisa SQL\\------------------------------------------\\
     public void pesquisaSQL(Statement state){
         int aux = 0;
-        int aux2 = 0;
-        Scanner scan = new Scanner(System.in);
-        
+        Scanner scan = new Scanner(System.in);        
+        System.out.println("\n\n");
+
         while (aux == 0) {
-            System.out.println("word the query");
-            String sql = scan.nextLine();
+            System.out.println("1 - Relizar uma pesquisa \n2 - Encerrar Querys");
+            int escolha = scan.nextInt();
+            if (escolha == 2) {aux ++;}
+            System.out.println("word the query: ");
+            Scanner scanner = new Scanner(System.in);
+            String newQuery = scanner.nextLine();
 
             try {
-                ResultSet resultadoPesquisa = state.executeQuery(sql);
-                //Enquanto tiver mais números, é pra mostrar
-                while (resultadoPesquisa.next()) {
-                    aux2++;
-                    //Aqui se passa o nome da coluna
-                    System.out.println("ID" + aux2 + ":" + resultadoPesquisa.getInt("id"));
-                }
+                ResultSet resultadoPesquisa = state.executeQuery(newQuery);
+                while (resultadoPesquisa.next()){
+                    System.out.println(resultadoPesquisa.getInt("id"));}
             } catch (Exception e) {
                 System.out.println("Erro na query: " + e);
             }
         }
-        
-        
-        //Operação para converter a string em um comando
-        
-        aux = 0;
     }
 }
