@@ -14,7 +14,6 @@ public class App
 {
     public static void main( String[] args )
     {
-        ConnectionDatabase con = new ConnectionDatabase();
-        con.menu();
+        
     }
 }
