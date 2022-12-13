@@ -11,11 +11,15 @@ public class Arvore<TIPO extends Comparable> {
 //------------------------------------------\\Adicionar//---------------------------------------\\
 //Por hora todo dado inserido está sendo armazenado na memória e também no database
 //Porém quando a operação acaba, a memória se finda e se mantém no banco
-    public void adicionar(TIPO valor){    
+    public void adicionar(TIPO valor){
         Elemento<TIPO> novoElemento = new Elemento<TIPO>(valor);
+        int aux = intValue(valor);
+        ConnectionDatabase conexao = new ConnectionDatabase();
 
+        //Processo de criar uma nova conexão
         if (raiz == null){
             this.raiz = novoElemento;
+            conexao.inserirID(1);
         }else{
             Elemento<TIPO> atual = this.raiz;
             while(true){
@@ -38,6 +42,9 @@ public class Arvore<TIPO extends Comparable> {
         }
     }
 
+    private int intValue(TIPO valor) {
+        return 0;
+    }
     public Elemento<TIPO> getRaiz() {
         return raiz;
     }
@@ -57,7 +64,7 @@ public class Arvore<TIPO extends Comparable> {
             System.out.println(atual.getValor());
             preOrdem(atual.getEsquerda());            
             preOrdem(atual.getDireita());
-        }        
+        }
     }
 
 //---------------------------------------------\\PÓS ORDEM//------------------------------------\\
