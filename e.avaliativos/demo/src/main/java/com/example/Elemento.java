@@ -1,39 +1,37 @@
 package com.example;
 
-//Classe do tipo genérica
-public class Elemento {
-    private int valor;
-    private Elemento esquerda;
-    private Elemento direita;
+public class Elemento<TIPO> {
+    private TIPO valor;
+    private Elemento<TIPO> esquerda;
+    private Elemento<TIPO> direita;
     
-    //Setando valores, visto em aula
-    // public Elemento(int novoValor){
-    //     this.valor = novoValor;
-    //     this.esquerda = null;
-    //     this.direita = null;
-    // }
+    public Elemento(TIPO novoValor){
+        this.valor = novoValor;
+        this.esquerda = null;
+        this.direita = null;
+    }
 
-    public int getValor() {
+    public TIPO getValor() {
         return valor;
     }
 
-    public void setValor(int valor) {
+    public void setValor(TIPO valor) {
         this.valor = valor;
     }
 
-    public Elemento getEsquerda() {
+    public Elemento<TIPO> getEsquerda() {
         return esquerda;
     }
 
-    public void setEsquerda(Elemento esquerda) {
+    public void setEsquerda(Elemento<TIPO> esquerda) {
         this.esquerda = esquerda;
     }
 
-    public Elemento getDireita() {
+    public Elemento<TIPO> getDireita() {
         return direita;
     }
 
-    public void setDireita(Elemento direita) {
+    public void setDireita(Elemento<TIPO> direita) {
         this.direita = direita;
-    }
+    }   
 }

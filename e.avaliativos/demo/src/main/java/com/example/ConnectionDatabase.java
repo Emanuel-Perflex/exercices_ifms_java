@@ -5,6 +5,7 @@ import java.lang.Thread.State;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,154 +40,79 @@ public class ConnectionDatabase {
         return this.nameDB;
     }
 
-    public void verificarConexao () {
-        System.out.println(
-            "\n1 - Iniciar Conexão" + 
-            "\n2 - Matar conexão" +
-            "\n3 - Inserir Dados" +
-            "\n4 - Consultar Banco");
-        Scanner scanner = new Scanner(System.in);
-        int scan = scanner.nextInt();
-
-        switch (scan) {
-            case 1:
-                try {
-                    Class.forName("org.postgresql.Driver");
-                    conexaoDB = DriverManager.getConnection(url + nameDB, usuario, senha);
-                    Statement estado = conexaoDB.createStatement();
-
-                    ResultSet resultado = estado.executeQuery("select * from dados");
-                    List dados = new ArrayList<>();
-                    
-                    while(resultado.next()){ //o método next() retorna true caso haja mais linhas
-                        dados.add(resultado.getInt("id"));
-                        dados.add(resultado.getInt("node"));
-                    }
-                    int aux = (int) dados.get(1);
-
-                    Arvore tree = new Arvore(aux);    
-                    for (int i = 0; i < dados.size(); i++) {
-                        tree.adicionar((int) dados.get(i));
-                    }
-
-                    tree.emOrdem(null);
-                    tree.posOrdem(null);
-                    tree.preOrdem(null);
-                                 
-
-                    if (conexaoDB != null) {
-                        System.out.println("\nConnected on database " + nameDB + "!\n\n");
-                    } else {
-                        System.out.println("\n\nfalha ao conectar no database " + nameDB + "!");
-                    }
-                } catch (Exception e) {
-                    System.out.println("Erro:" + e);
-                }
-            break;
-            
-            case 2:
-                try {
-                    Class.forName("org.postgresql.Driver");
-                    conexaoDB = DriverManager.getConnection(url + nameDB, usuario, senha);
-                    conexaoDB.close();
-                } catch (Exception e) {
-                    System.out.println("Erro:" + e);
-                }
-            break;
-
-            case 3:
-            try {
-                Class.forName("org.postgresql.Driver");
-                conexaoDB = DriverManager.getConnection(url + nameDB, usuario, senha);
-                if (conexaoDB != null) {
-                    System.out.println("Insira um número: ");
-                    Scanner xp = new Scanner(System.in);
-                    int aux = xp.nextInt();
-                    inserirNode(aux);
-                } else {
-                    System.out.println("Falha na consulta: " + nameDB);
-                }
-            } catch (Exception e) {
-                    System.out.println("Erro:" + e);}                   
-            break;
-        
-            case 4:
-                try {
-                    Class.forName("org.postgresql.Driver");
-                    conexaoDB = DriverManager.getConnection(url + nameDB, usuario, senha);
-                    Statement estado = conexaoDB.createStatement();
-                    
-                    if (conexaoDB != null){
-                        ResultSet resultado = estado.executeQuery("select * from dados");
-                        List dados = new ArrayList<>();
-        
-                        while(resultado.next()){ //o método next() retorna true caso haja mais linhas
-                            dados.add(resultado.getInt("id")); 
-                            dados.add(resultado.getInt("node"));
-                        }
-
-                        for(int i=0;i<dados.size();i++){
-                            if (i % 2 == 0){
-                                System.out.println("ID:" + dados.get(i));
-                            } else {
-                                System.out.println("Valor_do_No:" + dados.get(i));
-                                System.out.println("-------------------------------\n");
-                            }
-                        } 
-                    }
-
-                } catch (Exception e) {
-                    System.out.println("Erro na consulta: " + e);
-                }
-            break;
-
-            default:
-                System.out.println("parametro Inválido");
-            break;
-        }
-
-        
-    }
-
 
     public void menu() {
+        Statement state;
+        try {
+            Class.forName("org.postgresql.Driver");
+            conexaoDB = DriverManager.getConnection(url + nameDB, usuario,senha);
+            state = conexaoDB.createStatement();
 
-        while (true){
-            System.out.println("1 - Banco");
-            System.out.println("2 - Verificar arvore");
-            System.out.println("3 - Verificar Histórico");
-            System.out.println("0 - Sair");
-            Scanner scanner = new Scanner(System.in);
-            int scan = scanner.nextInt();
-            switch (scan) {
-                case 1:
-                    verificarConexao();
-                break;
-                case 2:
-                    Consulta();
-                break;
-
-                case 3:
-                    historicoBD();
-                break;
-                
-                case 0:
-                break;
-                default:
-                    System.out.println("Opção Inválida!");
+            while (true){
+                System.out.println("1 - Banco");
+                System.out.println("2 - Verificar arvore");
+                System.out.println("3 - Inserir dados");
+                System.out.println("0 - Sair");
+                Scanner scanner = new Scanner(System.in);
+                int scan = scanner.nextInt();
+                switch (scan) {
+                    case 1:
+                        verificarConexao(conexaoDB);
                     break;
+    
+                    case 2:
+                        imprimirOrdem(state);
+                    break;
+                    
+                    case 3:
+                        Scanner xP = new Scanner(System.in);
+                        int hp = xP.nextInt();
+                        inserirNode(hp);
+                    break;
+                    
+                    case 0:
+                    break;
+                    default:
+                        System.out.println("Opção Inválida!");
+                        break;
+                }
             }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+        
     } 
 
-//---------------------------------------------------//Inserir SQL\\------------------------------------------\\
- 
-    public void historicoBD(){
+//---------------------------------------------------//Verificar SQL\\------------------------------------------\\
 
+    public void imprimirOrdem(Statement state){
+        Arvore tree = new Arvore<>();
+        try {
+            ResultSet resultado = state.executeQuery("select * from dados");
+            // Memória
+            ArrayList <Integer> dados = new ArrayList<>();
+            while(resultado.next()){ //o método next() retorna true caso haja mais linhas
+                dados.add(resultado.getInt("node"));
+            }
+            
+            for (int i = 0; i < dados.size(); i++) {
+                tree.adicionar(dados.get(i));
+            } //o método next() retorna true caso haja mais linhas
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } 
+        System.out.println("\nEm Ordem: ");       
+        tree.emOrdem(tree.getRaiz());
+        System.out.println("\nPós Ordem: ");   
+        tree.posOrdem(tree.getRaiz());
+        System.out.println("\nPre Ordem: ");   
+        tree.preOrdem(tree.getRaiz());
+        System.out.println("\n ");
     }
 
-    
-    
 
 //---------------------------------------------------//Inserir SQL\\------------------------------------------\\
     public void inserirID (int id){
@@ -214,15 +140,42 @@ public class ConnectionDatabase {
                 } catch (Exception e) {
                     System.out.println(e);
                 }
-            
             } catch (Exception e) {
-                System.out.println("Erro de certificado" + " " + e);}
+                System.out.println("Erro de Node" + " " + e);}
 }
 
-//---------------------------------------//Consulta\\--------------------------------\\
+//--------------------------------------//Verify Database\\-------------------------------\\
+public void verificarConexao (Connection conexaoDB) {
+    System.out.println("\n1 - Iniciar Conexão" + "\n2 - Matar conexão");
+    Scanner scanner = new Scanner(System.in);
+        int scan = scanner.nextInt();
+        switch (scan) {
+            case 1:
+                try {
+                    //Banco
+                    Class.forName("org.postgresql.Driver");
+                    if (conexaoDB != null) {
+                        System.out.println("\nConnected on database " + nameDB + "!\n\n");
+                    } else {
+                        System.out.println("\n\nfalha ao conectar no database " + nameDB + "!");
+                    }
+                } catch (Exception e) {
+                    System.out.println("Erro:" + e);
+                }
+            break;
+            
+            case 2:
+                try {
+                    conexaoDB.close();
+                    System.out.println("Conexão com " + nameDB + " morta!");
+                } catch (Exception e) {
+                    System.out.println("Erro ao matar conexão:" + e);
+                }
+            break;
 
-    public void Consulta() {
-        // Arvore arvore = new Arvore<>();
-    
-    }
+            default:
+                System.out.println("Parametro Inválido, tente novamente!");
+            break;
+        }        
+    }  
 }
