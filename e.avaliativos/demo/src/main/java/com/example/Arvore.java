@@ -2,28 +2,31 @@ package com.example;
 
 //Arvore genérica que aceita todo tipo
 //Extends para dizer que os atributos podem ser comparados
-public class Arvore<TIPO extends Comparable> {    
-    private Elemento<TIPO> raiz;
+public class Arvore {    
+    private int raiz;
     
-    public Arvore(){
-        this.raiz = null;
+    public Arvore(int value){
+        this.raiz = value;
     }
 //------------------------------------------\\Adicionar//---------------------------------------\\
 //Por hora todo dado inserido está sendo armazenado na memória e também no database
 //Porém quando a operação acaba, a memória se finda e se mantém no banco
-    public void adicionar(TIPO valor){
-        Elemento<TIPO> novoElemento = new Elemento<TIPO>(valor);
-        int aux = intValue(valor);
-        ConnectionDatabase conexao = new ConnectionDatabase();
+    public void adicionar(int value){
+        Elemento novoElemento = new Elemento();
+        novoElemento.setValor(value);
 
+        ConnectionDatabase conexao = new ConnectionDatabase();
         //Processo de criar uma nova conexão
-        if (raiz == null){
-            this.raiz = novoElemento;
+        if (raiz == 0){
+            this.raiz = 1;
             conexao.inserirID(1);
+            conexao.inserirNode(value);
         }else{
-            Elemento<TIPO> atual = this.raiz;
+            Elemento atual = new Elemento();
+            atual.setValor(value);
+
             while(true){
-                if (novoElemento.getValor().compareTo(atual.getValor()) == -1){
+                if (novoElemento.getValor() == atual.getValor()){
                     if (atual.getEsquerda() != null){
                         atual = atual.getEsquerda();
                     }else{
@@ -42,15 +45,12 @@ public class Arvore<TIPO extends Comparable> {
         }
     }
 
-    private int intValue(TIPO valor) {
-        return 0;
-    }
-    public Elemento<TIPO> getRaiz() {
+    public int getRaiz() {
         return raiz;
     }
     
 //---------------------------------------------\\EM ORDEM//------------------------------------\\
-    public void emOrdem(Elemento<TIPO> atual){
+    public void emOrdem(Elemento atual){
         if (atual != null){
             emOrdem(atual.getEsquerda());
             System.out.println(atual.getValor());
@@ -59,16 +59,16 @@ public class Arvore<TIPO extends Comparable> {
     }
 
 //---------------------------------------------\\PRÉ ORDEM//------------------------------------\\
-    public void preOrdem(Elemento<TIPO> atual){
+    public void preOrdem(Elemento atual){
         if (atual != null){
             System.out.println(atual.getValor());
-            preOrdem(atual.getEsquerda());            
+            preOrdem(atual.getEsquerda());          
             preOrdem(atual.getDireita());
         }
     }
 
 //---------------------------------------------\\PÓS ORDEM//------------------------------------\\
-    public void posOrdem(Elemento<TIPO> atual){
+    public void posOrdem(Elemento atual){
         if (atual != null){            
             posOrdem(atual.getEsquerda());            
             posOrdem(atual.getDireita());

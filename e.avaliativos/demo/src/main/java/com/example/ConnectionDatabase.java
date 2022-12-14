@@ -40,7 +40,11 @@ public class ConnectionDatabase {
     }
 
     public void verificarConexao () {
-        System.out.println("1 - Iniciar Conexão\n2 - Matar conexão\n3 - Inserir Dados");
+        System.out.println(
+            "\n1 - Iniciar Conexão" + 
+            "\n2 - Matar conexão" +
+            "\n3 - Inserir Dados" +
+            "\n4 - Consultar Banco");
         Scanner scanner = new Scanner(System.in);
         int scan = scanner.nextInt();
 
@@ -49,6 +53,27 @@ public class ConnectionDatabase {
                 try {
                     Class.forName("org.postgresql.Driver");
                     conexaoDB = DriverManager.getConnection(url + nameDB, usuario, senha);
+                    Statement estado = conexaoDB.createStatement();
+
+                    ResultSet resultado = estado.executeQuery("select * from dados");
+                    List dados = new ArrayList<>();
+                    
+                    while(resultado.next()){ //o método next() retorna true caso haja mais linhas
+                        dados.add(resultado.getInt("id"));
+                        dados.add(resultado.getInt("node"));
+                    }
+                    int aux = (int) dados.get(1);
+
+                    Arvore tree = new Arvore(aux);    
+                    for (int i = 0; i < dados.size(); i++) {
+                        tree.adicionar((int) dados.get(i));
+                    }
+
+                    tree.emOrdem(null);
+                    tree.posOrdem(null);
+                    tree.preOrdem(null);
+                                 
+
                     if (conexaoDB != null) {
                         System.out.println("\nConnected on database " + nameDB + "!\n\n");
                     } else {
@@ -70,16 +95,14 @@ public class ConnectionDatabase {
             break;
 
             case 3:
-
             try {
                 Class.forName("org.postgresql.Driver");
                 conexaoDB = DriverManager.getConnection(url + nameDB, usuario, senha);
                 if (conexaoDB != null) {
-                    Statement estado = conexaoDB.createStatement();
                     System.out.println("Insira um número: ");
                     Scanner xp = new Scanner(System.in);
                     int aux = xp.nextInt();
-                    inserirNode(aux, estado);
+                    inserirNode(aux);
                 } else {
                     System.out.println("Falha na consulta: " + nameDB);
                 }
@@ -87,6 +110,36 @@ public class ConnectionDatabase {
                     System.out.println("Erro:" + e);}                   
             break;
         
+            case 4:
+                try {
+                    Class.forName("org.postgresql.Driver");
+                    conexaoDB = DriverManager.getConnection(url + nameDB, usuario, senha);
+                    Statement estado = conexaoDB.createStatement();
+                    
+                    if (conexaoDB != null){
+                        ResultSet resultado = estado.executeQuery("select * from dados");
+                        List dados = new ArrayList<>();
+        
+                        while(resultado.next()){ //o método next() retorna true caso haja mais linhas
+                            dados.add(resultado.getInt("id")); 
+                            dados.add(resultado.getInt("node"));
+                        }
+
+                        for(int i=0;i<dados.size();i++){
+                            if (i % 2 == 0){
+                                System.out.println("ID:" + dados.get(i));
+                            } else {
+                                System.out.println("Valor_do_No:" + dados.get(i));
+                                System.out.println("-------------------------------\n");
+                            }
+                        } 
+                    }
+
+                } catch (Exception e) {
+                    System.out.println("Erro na consulta: " + e);
+                }
+            break;
+
             default:
                 System.out.println("parametro Inválido");
             break;
@@ -99,7 +152,7 @@ public class ConnectionDatabase {
     public void menu() {
 
         while (true){
-            System.out.println("1 - Editar Banco");
+            System.out.println("1 - Banco");
             System.out.println("2 - Verificar arvore");
             System.out.println("3 - Verificar Histórico");
             System.out.println("0 - Sair");
@@ -139,36 +192,25 @@ public class ConnectionDatabase {
     public void inserirID (int id){
         try {
             Statement state = conexaoDB.createStatement();
-            Arvore arvore = new Arvore<>();
             String commandSQL = "INSERT INTO dados(id) VALUES(" + id + ")";
-            arvore.adicionar(id);
                 //Conexões
                 try {
                     state.executeUpdate(commandSQL);
                 } catch (Exception e) {
                     System.out.println(e);
                 }
-
-                //Em ordem
-                System.out.println("\nEm ordem: ");
-                    arvore.emOrdem(arvore.getRaiz());
-                //Pré
-                System.out.println("\nPré ordem: ");
-                    arvore.preOrdem(arvore.getRaiz());
-                //Pós
-                System.out.println("\nPós ordem: ");
-                    arvore.posOrdem(arvore.getRaiz());
                 
             } catch (Exception e) {
                 System.out.println("Erro de certificado" + " " + e);}
     }
     
-    public void inserirNode(int node, Statement state){
+    public void inserirNode(int node){
         try {
+            Statement state = conexaoDB.createStatement();
             String commandSQL = "INSERT INTO dados(node) VALUES(" + node + ")";
                 //Conexões
                 try {
-                    state.executeUpdate(commandSQL);
+                    state.executeUpdate(commandSQL);                                                  
                 } catch (Exception e) {
                     System.out.println(e);
                 }
@@ -180,16 +222,7 @@ public class ConnectionDatabase {
 //---------------------------------------//Consulta\\--------------------------------\\
 
     public void Consulta() {
-    Arvore arvore = new Arvore<>();  
+        // Arvore arvore = new Arvore<>();
     
-    //Em ordem
-    System.out.println("\nEm ordem: ");
-        arvore.emOrdem(arvore.getRaiz());
-    //Pré
-    System.out.println("\nPré ordem: ");
-        arvore.preOrdem(arvore.getRaiz());
-    //Pós
-    System.out.println("\nPós ordem: ");
-        arvore.posOrdem(arvore.getRaiz());
     }
 }
