@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Launch App",
             "request": "launch",
+            "mainClass": "com.example.App",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
             "mainClass": "App",
             "projectName": "exercices_ifms_java_deb5b446"
         },

@@ -1,7 +1,6 @@
 package com.example;
 
 public class Arvore<TIPO extends Comparable> {
-    
     private Elemento<TIPO> raiz;
     
     public Arvore(){

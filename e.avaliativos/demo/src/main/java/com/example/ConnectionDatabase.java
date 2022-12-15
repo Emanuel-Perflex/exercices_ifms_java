@@ -40,7 +40,7 @@ public class ConnectionDatabase {
         return this.nameDB;
     }
 
-
+    //Resolvi fazer tudo aqui por minimalismo, código sem muita coisa p/ rodar
     public void menu() {
         Statement state;
         try {
@@ -49,12 +49,16 @@ public class ConnectionDatabase {
             state = conexaoDB.createStatement();
 
             while (true){
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("----------------// \\---------------");
                 System.out.println("1 - Banco");
-                System.out.println("2 - Verificar arvore");
+                System.out.println("2 - Histórico");
                 System.out.println("3 - Inserir dados");
                 System.out.println("0 - Sair");
-                Scanner scanner = new Scanner(System.in);
+                System.out.print("Valor: ");
                 int scan = scanner.nextInt();
+                System.out.println("----------------// \\---------------");
+                
                 switch (scan) {
                     case 1:
                         verificarConexao(conexaoDB);
@@ -66,8 +70,10 @@ public class ConnectionDatabase {
                     
                     case 3:
                         Scanner xP = new Scanner(System.in);
+                        System.out.print("Insira o valor: ");
                         int hp = xP.nextInt();
                         inserirNode(hp);
+                        System.out.println("\n");
                     break;
                     
                     case 0:
@@ -84,8 +90,7 @@ public class ConnectionDatabase {
         }
         
     } 
-
-//---------------------------------------------------//Verificar SQL\\------------------------------------------\\
+//---------------------Verificar SQL\\--------------------\\
 
     public void imprimirOrdem(Statement state){
         Arvore tree = new Arvore<>();
@@ -114,7 +119,8 @@ public class ConnectionDatabase {
     }
 
 
-//---------------------------------------------------//Inserir SQL\\------------------------------------------\\
+//--------------------//Inserir SQL---------------\\
+    //Essa função é uma manual de precaução -- caso o auto increment falhe eu chamo essa função
     public void inserirID (int id){
         try {
             Statement state = conexaoDB.createStatement();
@@ -136,7 +142,8 @@ public class ConnectionDatabase {
             String commandSQL = "INSERT INTO dados(node) VALUES(" + node + ")";
                 //Conexões
                 try {
-                    state.executeUpdate(commandSQL);                                                  
+                    state.executeUpdate(commandSQL);
+                    System.out.print("\nNumero '"+ node + "' inserido!:");                                         
                 } catch (Exception e) {
                     System.out.println(e);
                 }
@@ -144,7 +151,7 @@ public class ConnectionDatabase {
                 System.out.println("Erro de Node" + " " + e);}
 }
 
-//--------------------------------------//Verify Database\\-------------------------------\\
+//--------------//Verify Database\\-----------\\
 public void verificarConexao (Connection conexaoDB) {
     System.out.println("\n1 - Iniciar Conexão" + "\n2 - Matar conexão");
     Scanner scanner = new Scanner(System.in);
