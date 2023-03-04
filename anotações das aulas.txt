@@ -19,3 +19,15 @@
 
 -> 05/09
     - Para a próxima semana trazer uma lista ordenada que adiciona itens no meio
+    
+    
+    
+    ##
+    
+    # 2023
+
+- Realizar CRUD (API REST) com banco de dados retornando códigos de acesso
+- Verificar validação de dados, tentar com CEP
+- @notblank para na hora da validção não deixar colocar uma informação em branco
+- @Valid para validar todos os atributos de uma classe
+- Pesquisar validação @manytoOne para verificar a questão de como definir a classe que tem um cardinal e qual tem muitos $Professor informou sobre a possibilidade de colocar um arraylist salvando a classe que seria cardinalidade N, verificar
